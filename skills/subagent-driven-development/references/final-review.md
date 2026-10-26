@@ -30,6 +30,11 @@ finishing-a-development-branch presents the options.
 
 ### Finish
 
+Before writing the completion report or deleting the workspace, follow
+[Completion evidence](../../verification-before-completion/references/completion-evidence.md).
+The requirement-by-requirement evidence map is the source of the report,
+including requirements left incomplete or unverified after review.
+
 Before you delete anything, collect every ledger line containing `Ruling:` —
 preflight rulings, parked findings, breaker adjudications, all of them — into
 your final message under "Rulings I made", in the order you made them, each

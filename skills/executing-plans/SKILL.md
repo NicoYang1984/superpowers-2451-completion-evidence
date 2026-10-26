@@ -290,6 +290,11 @@ in the rulings list. There is no second fix pass.
 
 ## Finish
 
+Before writing the completion report or deleting the workspace, follow
+[Completion evidence](../verification-before-completion/references/completion-evidence.md).
+The requirement-by-requirement evidence map is the source of the report,
+including requirements left incomplete or unverified after review.
+
 Before you delete anything, collect every ledger line containing
 `Ruling:` into your final message under "Rulings I made", in the order you
 made them, each with what it costs if wrong, and every `minor (deferred)`
