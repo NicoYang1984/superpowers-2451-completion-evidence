@@ -18,6 +18,8 @@ The issue describes reports that restate a plan without checking the implementat
 
 Same model alias `gpt-6-astra`, medium reasoning, Codex CLI `0.155.0-alpha.9`, macOS. Each arm has 10 SDD and 5 executing-plans sessions. Manual scoring was not blind or independently human-reviewed. Accepting a unique function name as a source locator raises baseline evidence completeness to 9/30. These correlated requirement rows are not independent tasks; 100% does not imply universal reliability. No full development lifecycle, plugin auto-triggering, original Claude/Windows environment, or official Quorum evaluation was tested.
 
+Published technical feedback: [original issue comment](https://github.com/obra/superpowers/issues/2451#issuecomment-6413269117). No upstream PR was submitted.
+
 ## Review the contribution
 
 - [Minimal patch commit](https://github.com/NicoYang1984/superpowers-2451-completion-evidence/commit/968c13faadad3de0a492580fe75db3f91620ad25): **3 production files, 61 added lines**, no new dependencies. [Portable patch](audit/issue-2451/fix.patch).

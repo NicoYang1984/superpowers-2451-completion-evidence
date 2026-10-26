@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-26",
+  "repository_url": "https://github.com/NicoYang1984/superpowers-2451-completion-evidence",
+  "visibility": "public",
+  "branch": "public/issue-2451",
+  "patch_commit": "968c13faadad3de0a492580fe75db3f91620ad25",
+  "evidence_commit": "d79fd500c9fee32c990e1e9ee9a60222bbdbc49a",
+  "issue_comment_url": "https://github.com/obra/superpowers/issues/2451#issuecomment-6413269117",
+  "comment_id": 6413269117,
+  "comment_author": "NicoYang1984",
+  "comment_body_verified": true,
+  "comment_posts": 1,
+  "upstream_pr_created": false,
+  "new_model_runs_for_publication": 0,
+  "public_access_check": "Unauthenticated API confirmed public visibility; README, comment draft, summary and one raw-tool record returned HTTP 200 and matched local bytes."
+}

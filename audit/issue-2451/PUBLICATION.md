@@ -30,3 +30,7 @@ Publication: Codex desktop `26.915.31029` (build `9771`) with bundled CLI `0.155
 ## Upstream status
 
 Before publication, #2451 was open with zero comments. Current `dev` README, AGENTS.md and PR template were read again. Their rule forbids an uninvited agent-written PR fixing another person's issue; the permitted path is a report on the existing issue. No duplicate issue or upstream PR is part of this work. The publication is an independent experiment repository, not upstream endorsement. Formal PR consideration still needs a maintainer invitation, human review and human-written summary, plus stronger evidence in the original environment.
+
+## Publication receipt
+
+The public repository was created and the curated branch pushed. Unauthenticated HTTP checks confirmed public visibility and byte equality for the README, comment draft, summary and a sampled raw-tool record. Exactly one technical [comment](https://github.com/obra/superpowers/issues/2451#issuecomment-6413269117) was posted to #2451 through the GitHub connector; a read-back matched the saved draft exactly. See `logs/publication-receipt.json`. No maintainer response was present at that immediate verification; no follow-up action or PR authorization is assumed.
