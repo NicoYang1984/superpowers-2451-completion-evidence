@@ -1,0 +1,950 @@
+{
+  "method": "Literal home/temporary paths and OS username redaction; original files remain local. No results or numeric measurements rewritten. scores/metrics report_sha256 refers to public text; original_report_sha256 preserves measured original identity. This manifest covers path substitutions before publication documentation edits.",
+  "files": [
+    {
+      "file": "logs/run-skill-tests.txt",
+      "original_sha256": "e1695d600db9a0e4e052802d552dbd2e653d6885b16ea1fee370bed85f4fc60c",
+      "public_sha256": "b01ff31e7d53e79d3ae87c966df08ff365772598e26cfd210789c875a8b326fc"
+    },
+    {
+      "file": "logs/agents/final-patched-A-3/command-review.txt",
+      "original_sha256": "e65ea13092fd916f82c77e71ef6d62cbdb37aa5f19592a23e8edbb7fcd87786d",
+      "public_sha256": "9fa493e753112265c96f34ac8d42b1378fda3ba4ccde594bc113a6b3e5eb79ef"
+    },
+    {
+      "file": "logs/agents/final-patched-A-3/metadata.json",
+      "original_sha256": "f47c49adb0f9edc9b2231a3faf4332dd3f5279844684a216ce33ab4cf18e2249",
+      "public_sha256": "fe8cec899ab01b3cbcffab20925de2779dca89243f06b5ff39b7e98372e87de8"
+    },
+    {
+      "file": "logs/agents/final-patched-A-3/prompt.txt",
+      "original_sha256": "528b813c11e77718a42c68ba220c7186636dcf3950be9865b4c7b57f3bbe7f3c",
+      "public_sha256": "a617e0e4ac044b680b5b62aebfce40b7579d376957dd4817a09f12ea6ea22815"
+    },
+    {
+      "file": "logs/agents/final-patched-A-3/raw-tools-review.txt",
+      "original_sha256": "984494457ec42951f3803ec247090261a0be1258a3a74b1ba398191e8327e187",
+      "public_sha256": "352c284f6d1f648060f02600aa73dfa4ec3107494d121d96e8d1596f75865fac"
+    },
+    {
+      "file": "logs/agents/final-patched-A-3/events.jsonl",
+      "original_sha256": "1ddb0c907c44bda03c72f2a98d550d41f23afeff4b1641fc210e3a076020fba3",
+      "public_sha256": "2e525169cf9f599d1d2693ec822b4be21330b8221b361776c5947558d28dcd67"
+    },
+    {
+      "file": "logs/agents/final-patched-A-3/raw-tools.json",
+      "original_sha256": "49582caee6b2ec0d0ad820a07f9b6ccec737fe0f88cb551cf2fa3a8507a57915",
+      "public_sha256": "969a51256048c3e6453c0f0c59ce10d803b168ae76e05075cb788fa09c62460d"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-3/command-review.txt",
+      "original_sha256": "b65c7710ee8f425af2154130dbfad3652ce2af59a8da31a1b1c2e4904c707d20",
+      "public_sha256": "900a6272c778ec37453cb1739afe39f04cbc820238380e0fb65d3db0fc11094f"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-3/metadata.json",
+      "original_sha256": "34f6e7a29e277b50d0a6ad1df60c010e656e3a90f5cbc987b4450515ee590952",
+      "public_sha256": "2b5c44cc0566b76249064aa6458580d63240123e23b025b7adf7ac2ab90636cf"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-3/prompt.txt",
+      "original_sha256": "36cba70e4028ef93a177346440171867caa9bf617f0ff210d35b4a436e99ca90",
+      "public_sha256": "6d2faf05bfc24d20be3bb1ac2807f2b8545736cf9247cdbac5daf4a78115fb3d"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-3/raw-tools-review.txt",
+      "original_sha256": "102f43aa0a138c29db025240f132cdfb9536eb6d1edbbb54b483e60546d6cde9",
+      "public_sha256": "0996f2eae3b12124ac229ad648d53306ef4e651f61ab2dcf6d75db0f1f3dfc20"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-3/events.jsonl",
+      "original_sha256": "29e9a7fcc0bf3382e0c601b5672d773d21a92edbd1339c17e80fa8f5ea3b8cba",
+      "public_sha256": "1d05adcec1dddf81cf9a1ca16502a51f9bf68678e7bfbcef718b4314066d7746"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-3/raw-tools.json",
+      "original_sha256": "d9a43776a8d07fb9d048d7df3a7c2819045216023eca27a4c1ba1f0fb2ab44ad",
+      "public_sha256": "bb0da87557d7642b043d7dcf4c940b17d8edcd855c8ca6cd8a2718c630ca244b"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-1/command-review.txt",
+      "original_sha256": "90225f33715bad2e550619bc77761c4fb429831283fdfc88630d90db2995d9a7",
+      "public_sha256": "3e7f7258484adff638fda793345c41a52f8282b8dc9f04bf562fe70dd5bfe218"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-1/metadata.json",
+      "original_sha256": "28531af42382072f920a8ce5f08b3f1a136ffeb8ce4460e6dbca26f7ad74f261",
+      "public_sha256": "0c310e1a0392e38f60473a1a9d8602c2eb2af0f0252d2336e9408d1b74563c3d"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-1/prompt.txt",
+      "original_sha256": "72a20d21f199ed62688371b0e42b6ba9e26caa0cbc73178d00b6593d410e1355",
+      "public_sha256": "51185786871b8dc6333decd73d021dbb7e7ddefa2c5ff97be5df6e08c9eaf49e"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-1/raw-tools-review.txt",
+      "original_sha256": "d4f3a6483df33ba3d03abc7f7f497ef8234eaa503b847d1d2a8ccc727c208a42",
+      "public_sha256": "af04e5b58bba2f8b6e735196726ada352606e7e50ce0b83aac8d911b80400f59"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-1/events.jsonl",
+      "original_sha256": "c89ac3850078f7a62d68f2423c3a03e9489325d8cc8c8fd50a25d9375ea5f267",
+      "public_sha256": "669c55e263873842499b6e6dbc40d77678920c626a42208499c64f2084368796"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-1/raw-tools.json",
+      "original_sha256": "c2f68ae0367928f8ec481a568aea8b61e99dcc9d0ff386a9cdaa6adfe902cc9c",
+      "public_sha256": "507647c9b6e0d3e9d5d6524bb44152bf3ac39d1f852fc43195bcd54ca9b5f17f"
+    },
+    {
+      "file": "logs/agents/final-patched-E-2/command-review.txt",
+      "original_sha256": "16992c73d2d7aa745cd7b9bb077027fe9be004dc9954906c2d7cad05005e8226",
+      "public_sha256": "605e35577c46f2e2cbf759ec9c7e99425a8c24844128d1701aedd5c1770f893b"
+    },
+    {
+      "file": "logs/agents/final-patched-E-2/metadata.json",
+      "original_sha256": "b94f161131c2a27a3f9bd5fcc7e5cd3a784a0c6d508d282429f22343da9dd0c5",
+      "public_sha256": "8e6154513552d7f00803ae3bf62854f04d5da44b9deea50e14781a9a8d6d3738"
+    },
+    {
+      "file": "logs/agents/final-patched-E-2/prompt.txt",
+      "original_sha256": "dd2483911644d68d7b91caf232a7520406f364999f3cf0ea509a5492fe9b77e0",
+      "public_sha256": "26957d484d7306b14b246b0b8a8ef3660bee8d17803129430ac4ae1b115af14e"
+    },
+    {
+      "file": "logs/agents/final-patched-E-2/raw-tools-review.txt",
+      "original_sha256": "9a44b6591fc7f91e21f05c9fb8a4e5d2c77b49c4c2a9f475ccdc8c8732bb1c7e",
+      "public_sha256": "aa3c485b682ccf827ba1f06fbc46e6947e7fd502860717526eb1678f90c35d36"
+    },
+    {
+      "file": "logs/agents/final-patched-E-2/events.jsonl",
+      "original_sha256": "e6996f61ceb3e24120c632758685f20667543c7c1421b6e1016418bc995d8c82",
+      "public_sha256": "dfd5443285b4c2fa9b0ce2683a4e796a8a64b6fb7777de957202f56ba31d1962"
+    },
+    {
+      "file": "logs/agents/final-patched-E-2/raw-tools.json",
+      "original_sha256": "3bf9b2f800b3872ee9c98759517cc14adb82d8d1bcbae60afafebe4e0b8eb9e1",
+      "public_sha256": "096626ca1e7534c52fcfb0129f18a708bb2923e1b6a380d4f678be64dcd8a9b7"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-2/command-review.txt",
+      "original_sha256": "f09e5400365a1030811aba2e395973b176cb56d367c4bc33ba65adcd7a733f1b",
+      "public_sha256": "766823a6ae07c470920a888bc1e84219fa89a6b1c8f4a538381ca24df5166baa"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-2/metadata.json",
+      "original_sha256": "7ac851d48d4e85f968a062a0d319dc70da1f357a20d66d3565c49863a0a15d0c",
+      "public_sha256": "10af2cd5932b51924558918912e604a955dc5937e80e549af6de142dde3b775e"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-2/prompt.txt",
+      "original_sha256": "b8a5311fec0aba0306d2b6aca78186b29e60e778ef420246e2d68bc631b2ecb1",
+      "public_sha256": "5797b1831a5bb47683b1a052b7e7d4a04b8a2438d4a5761d07b8454bd29abcaf"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-2/raw-tools-review.txt",
+      "original_sha256": "9417e71f74655689735c69efb1137cce504a3ad9f5fb3a89904371b95b14ddae",
+      "public_sha256": "3de6cc86012dcd1ca59f9ac1a628f49570e295a89bffef9424f61d3763091138"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-2/events.jsonl",
+      "original_sha256": "2b2ce52874ae255fb8260e91576a405101189be83af7f82fc7baeab27d7de0b5",
+      "public_sha256": "a8f18d9a74859eb301908ba80d048ae91bf9d96ac65b3e9592a11c439a452be8"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-2/raw-tools.json",
+      "original_sha256": "ab16417803b21077bb3bf4b6a6359b4db6b8a530245e29e263d5d353a166b516",
+      "public_sha256": "251e12f3eb4c8cc99f14d947d4c5d43d6abcedec4cbd4f33440c3cde5814477b"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-2/command-review.txt",
+      "original_sha256": "ea48356f56c92abb9ea7ae22238b8d5b1f6847754c809b2eac6c83e75bd59dfd",
+      "public_sha256": "76663279b5e1da655ba920a00003027efe3bbdda4358ac1c80905cac6d4495fa"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-2/metadata.json",
+      "original_sha256": "95fc6276d2b56637c7742b718c6c69bd2a0480376d748f25e6032b88044044f4",
+      "public_sha256": "23e39a149824524d29468e748374a585a64165166c4352e12b3fc31f1297f7da"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-2/prompt.txt",
+      "original_sha256": "0e496e46a03788550950b915bf9c5ad3291edea3b79cdb9795655d71f2425c5d",
+      "public_sha256": "b7dab1361d4f57284fa3965f2bf254764f385a7494174c4cf1a7ca9f8f599058"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-2/raw-tools-review.txt",
+      "original_sha256": "0e40e0a5ad4fdcf2c4f4d19ffa58fa4471094a234d02000765bd4c963fe229a7",
+      "public_sha256": "60d4ef2782bdc0fcb6a5f487f186e4a3f38fa8f3246c22f282730dd96db1e870"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-2/events.jsonl",
+      "original_sha256": "d8e9d9ceca00b298be3af69e74b9233ad16ad7d81ffb92c9c0f3ca67f7705494",
+      "public_sha256": "ba2159144c036008468972fe4b88ea34fb7d31d9928da9063a71e1048a369fda"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-2/raw-tools.json",
+      "original_sha256": "f9068b2c9cc33f65038adfd2f9bf37c350bc085db42850496ad4562bec9c877d",
+      "public_sha256": "3d024be765535b40dad315a75c7deda8316a2435f6f7ce57397f8fbbb13e1055"
+    },
+    {
+      "file": "logs/agents/final-patched-C-1/command-review.txt",
+      "original_sha256": "cae0f12b996f4d2b0e46a1fa90c24145abf2d846a49a7c6d1cd6a1efffa158c5",
+      "public_sha256": "bc13f02fbfd2b1eaf2bbd7584a00c7568d4796b9a3622e082def73d91ddef0f0"
+    },
+    {
+      "file": "logs/agents/final-patched-C-1/metadata.json",
+      "original_sha256": "f064e6d6c52354b5cec972e20630b3274893cb554bb8bd26a4e92731d9e57c76",
+      "public_sha256": "3d210f47d5f8c1ed47db7b47d3962e5f545fff6785a850907bbaeb55885ad479"
+    },
+    {
+      "file": "logs/agents/final-patched-C-1/prompt.txt",
+      "original_sha256": "3a9ee2d7f963aa1fadb8605ddac427dbbfe0bed21d2ea3e8a44bb730bbbb3db5",
+      "public_sha256": "762bf4d9979b7fd32e601f16ca1a2a98fe5890d87fbb527ff33eddcf56c0f9e5"
+    },
+    {
+      "file": "logs/agents/final-patched-C-1/raw-tools-review.txt",
+      "original_sha256": "d0fc74b5c306287f367007f8611f5064ec3536e3dd0f6a36c972cca9d0e4ae3a",
+      "public_sha256": "ff832bfd6bfa6f16576ae7a26498bad94ea7d0c618aa64666e75b4f1e7be8442"
+    },
+    {
+      "file": "logs/agents/final-patched-C-1/events.jsonl",
+      "original_sha256": "bb63337bb5865030e5ce89d1e4d54f30105033f80556a7264282b350c94170c3",
+      "public_sha256": "d6e597babdc278e261fb2bf7bd7417a84ac410166692561e9f25c85515e45173"
+    },
+    {
+      "file": "logs/agents/final-patched-C-1/raw-tools.json",
+      "original_sha256": "c2751805442ba6fbf0797dcd5ba03d21cd6c7cb4bbcc2bfc318f9bfb5408da81",
+      "public_sha256": "ba5b6f296e504adcd2d82e2fe6d59df9ca24e210f8868d7052e2f77002d5e5f6"
+    },
+    {
+      "file": "logs/agents/final-patched-A-2/command-review.txt",
+      "original_sha256": "f16221f2f7d0c750c67b2f8a2fd482f5955b9b1019d4d3435f46d63bb831bf71",
+      "public_sha256": "25c0f7067479c9f8f2931fdb784233b05f56d1812c57631f3a2b49b620d897ff"
+    },
+    {
+      "file": "logs/agents/final-patched-A-2/metadata.json",
+      "original_sha256": "7aa112b6c82946c147d6942f80209984dfd3fac89f0c7f62efa26a9ef4abcd25",
+      "public_sha256": "f74123a84bf083a9054132382ad7d44a21cb13fc4decddaa31f9459938893985"
+    },
+    {
+      "file": "logs/agents/final-patched-A-2/prompt.txt",
+      "original_sha256": "176a263180b9ade87c388033a141ca1323f6c0ee20cd04929a82e03c4ca87c12",
+      "public_sha256": "a77f3234eaa4cdf4d4fcc1025619df606ac0e13fd9448709afd2d63455b14f36"
+    },
+    {
+      "file": "logs/agents/final-patched-A-2/raw-tools-review.txt",
+      "original_sha256": "f6534dc61a6ac0f42af111b2d9f491a6953527feebc418f5578ead6f7e61a640",
+      "public_sha256": "af47bf70914c6e42c0d62c529575f6a1731f64b4ee0c10c552c311364e455238"
+    },
+    {
+      "file": "logs/agents/final-patched-A-2/events.jsonl",
+      "original_sha256": "b53b8502748eefaeed7327dd79381fd29825cba1bf52c19b4409b867f62fd211",
+      "public_sha256": "48b90fdda29e3a1ea49f6b68e808dc0139d708f8b582d745fb8d53ae943a25c2"
+    },
+    {
+      "file": "logs/agents/final-patched-A-2/raw-tools.json",
+      "original_sha256": "e4ef664b0b7e77373d23932f1009434b52272cd8bbce5aaa842d2f52cf86d559",
+      "public_sha256": "c66062add59a7d5f5b494429e9edbadcf81da453e66cf10c6ddfb0b9ff326ef9"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/command-review.txt",
+      "original_sha256": "2ea5d80b86ed0b89d8afd8ac8cd305364b729480b1754ed836b218d984d2ac67",
+      "public_sha256": "d4468a598a8d24f5fcf6cd070a9b57dc06df5cb85756517821f767997631d436"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/report.md",
+      "original_sha256": "5539fc75e1931e43790a830c5797e9c1ddb3134526aba71293706504cdb32d81",
+      "public_sha256": "7488b6067c20702f492a536b7c573f08dac5446adb9561509d8cb0b62312258e"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/metadata.json",
+      "original_sha256": "90d25fd80385e8836fa056188b3f069db6bc54207fdc26c982ad950ae9dc2684",
+      "public_sha256": "4011b3d4fa90ffa79ae71a27bc0efe2ec06501509c2b44cf46da2dc2836fc790"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/prompt.txt",
+      "original_sha256": "9af3c0dab68c7824f5fefb636c417e8fb76c997d25a5c64bfed91f6af9b66f12",
+      "public_sha256": "1673207a070d0ea624b391d03cb2cb2c215ab3a38e382ce801ad2ee6da944a24"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/raw-tools-review.txt",
+      "original_sha256": "fc50dc9bbec6c900d19b6ce88f9a94529ffaf662656a7a1277d82decf40f69e6",
+      "public_sha256": "3a6cf628d68950b001bb77d4594e5db996e0f8531f79d701190eebf5a713e7e3"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/events.jsonl",
+      "original_sha256": "c115a2e68e06d4b8e7c694e94cf566197f8d19f772a2ca13950fa22a861cfcbc",
+      "public_sha256": "43a2649119de11f17ce47b8c9974e21e962c05880f37351f7f9995f39b08eada"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-3/raw-tools.json",
+      "original_sha256": "5506fe873289998292a44ede92b327565afbaea926bc9f6f0bf6d440cf60503c",
+      "public_sha256": "7ef2bb59aa6ba10d325eb0e5fe701d8819446488b6c38488a1ad4e6b613809c7"
+    },
+    {
+      "file": "logs/agents/final-patched-E-3/command-review.txt",
+      "original_sha256": "d762d6577e3494a44bc47a92988f79dc61340a39b75f4ba93154678d51ac766a",
+      "public_sha256": "da06d6862f81cc1826b671d298bbc2d843fa132e21cce2cd532dc38d261b0c1e"
+    },
+    {
+      "file": "logs/agents/final-patched-E-3/metadata.json",
+      "original_sha256": "19a6f26315e0809493348dd4fb00b390df8e1be6c56c98643f61fc9aeeb043e3",
+      "public_sha256": "3baa3ac0c1a5b58672708cde9a49f2ad6b0d2977eeb4d00f91f8d74bae0421f1"
+    },
+    {
+      "file": "logs/agents/final-patched-E-3/prompt.txt",
+      "original_sha256": "79ea96eefc95de75800d6bc88d797e0f72c3e7eef3eef8d3d2bdbff850e2020f",
+      "public_sha256": "e5ee640e0f6195c46409193fa5f99d50c6cf11bbae5c97ba3360da3b6ccb0463"
+    },
+    {
+      "file": "logs/agents/final-patched-E-3/raw-tools-review.txt",
+      "original_sha256": "9db8f4547126c4a66c17ffc622cfbc941d88494d359b746ed2a488840da70680",
+      "public_sha256": "f5d4592ad774ea7ca0b9a71f47beda0f04f3442c17ef60b8c05c7d2bd0529860"
+    },
+    {
+      "file": "logs/agents/final-patched-E-3/events.jsonl",
+      "original_sha256": "7664dcf4a07e1df8cff790889f238d145e8993f8dc3278dea653285288a07f08",
+      "public_sha256": "3ed8b185ece9530678a330ec30121cfcd23f789294ca9436fe0f53b3bd1e63b4"
+    },
+    {
+      "file": "logs/agents/final-patched-E-3/raw-tools.json",
+      "original_sha256": "558a1b5415a2f2be53b4896ccad36ea12c1f29d35d6d954289c5c7b5996e549a",
+      "public_sha256": "c65b816a5a578327ea9443ff9c0441a8f1e05091db99e0a5eadc6ff6396f61cd"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-2/command-review.txt",
+      "original_sha256": "cbe388707fa8a3cbd1631faef040b7f7f4293ebe3ae89cd0686f45a941b94a3e",
+      "public_sha256": "4a6dd3d570e0bb787f7ae3c5c5cca7b296067d75e3020434326af61957aedfdb"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-2/metadata.json",
+      "original_sha256": "93c6216c7df487f1669a961ab113f9f9c110a8d47f160bf60e43f1220fa313cb",
+      "public_sha256": "d7d8ba85ccf9a5e11268afe411e166a98fcb352a999aa38940a36264897a8f81"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-2/prompt.txt",
+      "original_sha256": "f1553c603b31f1fa996934036ebdda4d1d9232784e2370825acabf14b00e4836",
+      "public_sha256": "3f0e3cd7df4bd5a6a8669c0edc0fef69484d92de386f124d74a48ba99923ec8e"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-2/raw-tools-review.txt",
+      "original_sha256": "42821a91993569e5bc56f1303ebf7d80e9ac4734e669342f7e3c89e9b760817a",
+      "public_sha256": "e36745bb60c32bff3f9902c573833565e61f3131ab05847b9017dfb643258b13"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-2/events.jsonl",
+      "original_sha256": "2a06f0f36a612ccadf549a6f39a978742fe6ea8f835f89f3652d175a7c396518",
+      "public_sha256": "79f3144c778c32c7a150e53e279614b87d3b29b4cad5bdfb0d21d159b2a7a6aa"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-2/raw-tools.json",
+      "original_sha256": "205fb623257f43ffec68176a46d9f64780516cbfe17dfcf29c3b6886e979052d",
+      "public_sha256": "783f3e43ccf961687b0dee1294c402f438f29149dc90d850df317548787020f4"
+    },
+    {
+      "file": "logs/agents/final-patched-D-1/command-review.txt",
+      "original_sha256": "8527bd4424e55b594b093810d355675f6b76ccb13be20f5c8c004b86db86ad2f",
+      "public_sha256": "d660354f65bf5fcb9bb18355b688647721f28b877eafde358ceb3fbb364bc935"
+    },
+    {
+      "file": "logs/agents/final-patched-D-1/metadata.json",
+      "original_sha256": "ca1777a12250420fb910158920a2bd2db6d658ad816db94ea0027d9d15e347ec",
+      "public_sha256": "4dc2f22da4906da5e7019febe511bfb7b3a48b92d8020bbaadefd619c0ba15dc"
+    },
+    {
+      "file": "logs/agents/final-patched-D-1/prompt.txt",
+      "original_sha256": "5d5fac4f61d9cdb85199cc5bd149ee400f7ee21dc9efabd934bac2158c20942e",
+      "public_sha256": "530f282b720f206786e3f0134dd02bd00599b12eab6d46d408c20e866b3cb72a"
+    },
+    {
+      "file": "logs/agents/final-patched-D-1/raw-tools-review.txt",
+      "original_sha256": "6a3af33a219bdacfad84e387316cbdacad135b24bde77ee18338b19dbeb074f5",
+      "public_sha256": "2d3290b36c612f7b87462842e81d585e15b4357040807fa2032cb604c722e580"
+    },
+    {
+      "file": "logs/agents/final-patched-D-1/events.jsonl",
+      "original_sha256": "ea6d20ddc6d1f0f16fb3090d48bfa254b09c77c6993afacb376c5326768c80de",
+      "public_sha256": "6141afa08dc7666096c486d488158312f0599ef9af7ec26ea474f3f011f0229f"
+    },
+    {
+      "file": "logs/agents/final-patched-D-1/raw-tools.json",
+      "original_sha256": "5d2eab0735790ec58dcb0d6faaa65ea86e442d1dd5d144efa7c048d950630d3c",
+      "public_sha256": "c3fce36d4a16b976baadfeeb8557dca98075d65b896f011bd492f08cb9b6279f"
+    },
+    {
+      "file": "logs/agents/final-patched-B-3/command-review.txt",
+      "original_sha256": "46131513808fe467e08e0acd80ce825aa6321fca0a22c70e40221ad23f84f0a5",
+      "public_sha256": "0aef8df48b047ab298dbd8aed0d95066c0cb9845fed80245441e727a3ded3290"
+    },
+    {
+      "file": "logs/agents/final-patched-B-3/metadata.json",
+      "original_sha256": "4aebe6e756ab613bafb938c9f4d6283c0507b1730f08585ecf1b7dc8a8fa1bbb",
+      "public_sha256": "3d99ec69e82add98519f10e6e2a4294824cbada9e08fb46650261790a9d82a77"
+    },
+    {
+      "file": "logs/agents/final-patched-B-3/prompt.txt",
+      "original_sha256": "b84423f14153519dedab810e33aed4f383c00685a8fb7fc3ce34e6cecc1c337f",
+      "public_sha256": "45ed71289d1b859ca8080d9b0cf3e42c8e009d0df27a9c9ec9de624f1917ec1d"
+    },
+    {
+      "file": "logs/agents/final-patched-B-3/raw-tools-review.txt",
+      "original_sha256": "b14bfa2cc574a35aacafb608e3528924e918d700c91c3b611399631c486217fa",
+      "public_sha256": "83af37cf1402bc1282543a0d467874220ca662e7e955c5e55b984e4776d82355"
+    },
+    {
+      "file": "logs/agents/final-patched-B-3/events.jsonl",
+      "original_sha256": "061c3b727b99d0d63d9185c645a374ec7cf0233ecaddb2f7caf15cda37f5edae",
+      "public_sha256": "de52211f86ab0e5cb346c604c84a0bbb8fa8573b2cb60921de7d54955217e4c3"
+    },
+    {
+      "file": "logs/agents/final-patched-B-3/raw-tools.json",
+      "original_sha256": "7e9b23d34210d362d075a506153ac647aa47e024c1db9c9eeb15814b57c421b5",
+      "public_sha256": "27abf3f422c3eab64eccd974f174c81cc8e3990cef1be32de1adf2f528ed82d8"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-3/command-review.txt",
+      "original_sha256": "f8d0c5572d2fbbc9fa2039f15abb38255c2c3ac997548918a1a355b48ca2cb12",
+      "public_sha256": "bc6038cc069a646601b89a72ea323327d73b7433134e2df2dbc5b0400e338e27"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-3/metadata.json",
+      "original_sha256": "8a3d98e7f5b6b8d12bca169dc33871e03a51e62336b5552edb6a1844034315cd",
+      "public_sha256": "9bf88ee5c3c28488e4a8e3a505c696075152ec56dfbdf988abe4fa920db3343b"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-3/prompt.txt",
+      "original_sha256": "73cde12139f54d275aa36573f39486d9517e29c6c2cebf9856179d6885b07b07",
+      "public_sha256": "984bc0c385275b33e1533e2c2c6319c9e91903bcc5c0ea2b7302674f7fde122a"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-3/raw-tools-review.txt",
+      "original_sha256": "43c7df7e84881f1ed55223f85bcde3c06489c5dd4e5af6f5503e6c153da96f00",
+      "public_sha256": "c5b7db476e8a0a57972283a8c5992b626b8a830f90dce0b662d18aec42be7ce1"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-3/events.jsonl",
+      "original_sha256": "3f4907821445475c0e8e6392739f4c37f50804a94256b3f9926f9497ccf1fa2c",
+      "public_sha256": "2148ea5e7bd9293f758ccc7ebbbd73a3b0f23ea148745a5b993d1dbc400cef9b"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-3/raw-tools.json",
+      "original_sha256": "83955645cc96d4db38fb1484a75c3d637448a57ec76d79ec549ca289ada96f67",
+      "public_sha256": "2d70c7c1de165cb41d172c519473e27304574f63074e14afb7d4fe38b7c1b895"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-1/command-review.txt",
+      "original_sha256": "6bdc0315a8fb1c848c5793cd2263dd74b1205a92b44be30854320f7ecca89bae",
+      "public_sha256": "cef2e104f13f1758f0d6f70bee9b25abde5eaaba069a93c533cb3c5e4b10bb8a"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-1/metadata.json",
+      "original_sha256": "995426d7f54457d7ba67c4a119983a0e5a5477d42548e63cc907b668594c69b2",
+      "public_sha256": "258420e164499790cd67048dc4e004441804441fb7ad2525896b415f59ddb6f7"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-1/prompt.txt",
+      "original_sha256": "9ff1495431e3b83cf8977207b54e3a60030d8f169e8be38322aa44d930951b2b",
+      "public_sha256": "71ba9eed13b7b84d1258c0f4268c328ad489af0bd57194082a2f921afda1a77b"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-1/raw-tools-review.txt",
+      "original_sha256": "265c633844fc843dfadd15a6eba9b261a96ec5a520ed2212b6fa16d74b5434f2",
+      "public_sha256": "87616301a260770e856fef2bf01e3029dc35ec1edf694f3bd23ba3ba91589cd9"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-1/events.jsonl",
+      "original_sha256": "0889bfd4a2b37f67f5ed3314c7406a75f9ee537e62fbe17fa87580c7a1166682",
+      "public_sha256": "6dba38b5d6c4b3257efb10959e5097ff74da7f1c320bc99fd02c63686d032f6b"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-1/raw-tools.json",
+      "original_sha256": "70aaca8d9b8df18ac60e0e77da266a5510d1e7ea1056c5f1b8f1f515edf81a85",
+      "public_sha256": "e3d0975563039b4ea099bf28a08421d6d7454673fa91846c182aa4283a17efcf"
+    },
+    {
+      "file": "logs/agents/final-patched-B-2/command-review.txt",
+      "original_sha256": "85bc5abd3cce7e21d7b1a8acda35ec58b5ad90acd03e625b7e96af213d13febb",
+      "public_sha256": "08edf2d1314385b7ecc75d2879e088bd498b7d70ecf8eb52fe051d83d003943f"
+    },
+    {
+      "file": "logs/agents/final-patched-B-2/metadata.json",
+      "original_sha256": "26ec74e06d1fd935e568526845ea71a496a35abd7622dca6396815060e615d51",
+      "public_sha256": "0dec6e79d461954dcb8691cf7f4727678186c4c0d1bf2d17e585e42f3767203c"
+    },
+    {
+      "file": "logs/agents/final-patched-B-2/prompt.txt",
+      "original_sha256": "36edbcbb7d0fe15f04153af2956cbb47e1a9492a65f80b4fb29918448f7b1e53",
+      "public_sha256": "5ce8e89590518cdf677f4aa0c70fac9a9c38af469317276bab802c7d134687d9"
+    },
+    {
+      "file": "logs/agents/final-patched-B-2/raw-tools-review.txt",
+      "original_sha256": "9fafeda9aa8fe9827c317e7364fa1fc479034d774775312a8818392a037f2a1c",
+      "public_sha256": "c537d65a867ae5a4ba1c7592367a620410a253a78e7a505e5714347fa0e3f092"
+    },
+    {
+      "file": "logs/agents/final-patched-B-2/events.jsonl",
+      "original_sha256": "0854dec0ecdccef3850d50ad28f6d7069c499263c56b07c23266f3b932caed96",
+      "public_sha256": "d01ddf27eb9262e7a8c6dd39ddc07f7a315d5a4ba22ab45bfa255f271b19bcfb"
+    },
+    {
+      "file": "logs/agents/final-patched-B-2/raw-tools.json",
+      "original_sha256": "e027ca744bd57a5fb477740f1056a3b1478cb9b68dd5ef93cb1cc31b1df63319",
+      "public_sha256": "28403a80f2be6881b4137e15dc2a7c19cec1bc3ee87202fa6f29f888eb359fcf"
+    },
+    {
+      "file": "logs/agents/diagnostic-v2-A-1/command-review.txt",
+      "original_sha256": "d6f43aab47370fe3104eaf9ddd163c70447bce86c3b57c4116ee04218ace830c",
+      "public_sha256": "e5c6e9e4fc0af7df474f85b3d86a067195dd17c615fc33b129c4889b147963c5"
+    },
+    {
+      "file": "logs/agents/diagnostic-v2-A-1/metadata.json",
+      "original_sha256": "ed03ea5318860c27a3bf7dec8609fea069e8c70107d601be0fb1a541bff8f253",
+      "public_sha256": "d4b155b9a5de884fe2d5cfcc45acf2e3a2cfbb2b2e638eb1ac52d8893e0cfa0e"
+    },
+    {
+      "file": "logs/agents/diagnostic-v2-A-1/prompt.txt",
+      "original_sha256": "66ed280c3ef6dddf75ca7cd668d9cb37ee1ca7dd6e09f91ca9b74d2a00c3aed0",
+      "public_sha256": "55147524f2b6cb09d17da36e1fae775b72083a37a9820ccf804476c42341cec3"
+    },
+    {
+      "file": "logs/agents/diagnostic-v2-A-1/raw-tools-review.txt",
+      "original_sha256": "57790299b3dc172d9e518b7d5b243e1beb659fca2154ccca2376f952d959c42e",
+      "public_sha256": "8ef6d58c38472780b1e6ec91dbd669e3f728d9905f698c9466ffe70f93f42e3b"
+    },
+    {
+      "file": "logs/agents/diagnostic-v2-A-1/events.jsonl",
+      "original_sha256": "280756511a100d72b42e34cccf8b8250ebc4d9269a9ea33e6206563c51bd4688",
+      "public_sha256": "0f132edc83db2b715c6e137438debc6a20193c123ee8602f228117339b560e57"
+    },
+    {
+      "file": "logs/agents/diagnostic-v2-A-1/raw-tools.json",
+      "original_sha256": "1b6388b29167e423213f688a083e8cfd92af7b12922c56206399610d2c508695",
+      "public_sha256": "8c8b6983caa59323546f01241ee09357f9e1b88e91ef225c5c73161fc55c25e3"
+    },
+    {
+      "file": "logs/agents/final-patched-E-1/metadata.json",
+      "original_sha256": "2192be323d43ea55fbbc236a4003c23c57720a8f73c0856f2068d6c0ef6c0a22",
+      "public_sha256": "3d2c80eb22484f127111cd20065c830202bf5d751b2f2519246c186ce6f15600"
+    },
+    {
+      "file": "logs/agents/final-patched-E-1/prompt.txt",
+      "original_sha256": "6219a230d591ff30900eeb246c39973f42f6338325c362acdd0066ce37c7c01e",
+      "public_sha256": "409b79dda16c7b643d6e258ca4c15a53ffdfb45b4a51375270600c85f985bbc0"
+    },
+    {
+      "file": "logs/agents/final-patched-E-1/raw-tools-review.txt",
+      "original_sha256": "ab4c74384191e73801f8e0a569897156cf7e862f883fb668161c8d4224976a97",
+      "public_sha256": "74a0427316697d0aa82581f2955484941e14d0dc60a8916648edf5225259da41"
+    },
+    {
+      "file": "logs/agents/final-patched-E-1/events.jsonl",
+      "original_sha256": "226cf8e37b31ca0561c97fb5c0ff3c5fe0d366bf14678f96f32a37c8040a48df",
+      "public_sha256": "f97ec4a8131494de94e5b4f801b80131d3ce7c320a9346a5eb4856e0bb0dc054"
+    },
+    {
+      "file": "logs/agents/final-patched-E-1/raw-tools.json",
+      "original_sha256": "95f0b443fdab2741216ab5bf4b25a10545ad729569db232d5f8fe0582be117a7",
+      "public_sha256": "b537f0d6efc009709b189e83162a327fa46155e20507602fdf8e832b44833e44"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-2/command-review.txt",
+      "original_sha256": "70f9252b261a51f2e275ce4f0a1d2fe954936a3143e28c960ba193326538268f",
+      "public_sha256": "a5151cfc1c35d2e51591b700313ac278a3675b715dee5285e294e9ea4657bc55"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-2/metadata.json",
+      "original_sha256": "7bfe831431bc4f5afd2d90028985568af41b4445ef9b1b381ec540f70d780f11",
+      "public_sha256": "650c66e5cd45c8e55760ffa1a8fa40196015dfa4a40e869ffec04ba762f98917"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-2/prompt.txt",
+      "original_sha256": "88aa6b71290430dcb695b662371ee8b561db7da468e867187e6aa8050136692c",
+      "public_sha256": "81ef80ce794a94506c51dc36511d31779d49983b35e96ffebdaa563ec593d5df"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-2/raw-tools-review.txt",
+      "original_sha256": "48a10823ccba339b65c593021fef276f823e802bf5d0191f79b41818bc9a25cb",
+      "public_sha256": "b08dfa90f9d0ef8160a22844faf4e1ba724f713b1b21f9aac98e7c40e544172a"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-2/events.jsonl",
+      "original_sha256": "c0924a2540b56dc81e423b7865130ac41b1f124bed7f5e8c2a378e32d05bc260",
+      "public_sha256": "343ef0ae92b5064b0cec38e08680ca9abdefbc574407232e6520e98aaec2b206"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-2/raw-tools.json",
+      "original_sha256": "1eb4517b14a5eba50dfeb5d422ed0387abcf99e35b9a7e44f24677f687bb3875",
+      "public_sha256": "aa0fca44793b057bba79a61c4fe3ce05d66706e5634ec0cf707c2667070ec7af"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/command-review.txt",
+      "original_sha256": "d47f163251028610096f6fdc3a87cff4f3bb1add06acdcc75df76507fd844d8e",
+      "public_sha256": "8ee39fe546538a38efeb71cc704b1d92351e0e7a73099d6becf5104fa75ee160"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/report.md",
+      "original_sha256": "30fd968076301770939cfc67d4d6d6dd77f29c884c917fb18594e7f89a617014",
+      "public_sha256": "454d77007a78df7d9da6e0d6ac56f4aeafe7ab27af534eb5f0c0436871d48ac0"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/metadata.json",
+      "original_sha256": "6b85b6b1164048d031db66b8c79ff6c3ac2e0261af87e16a692920b25e40553a",
+      "public_sha256": "88a5b6a35c8a80ec3de54fc4cc810eea283c14f0e85e7f4aeceb09b38fbd9935"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/prompt.txt",
+      "original_sha256": "705295f4e538a55c3aa453c35215d645e70e2724c34f170a75f738c09e1dc162",
+      "public_sha256": "c53a1b7035e4b0e145d5d75763e60540229ccb373c7facd58bcd9f561fe56c41"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/raw-tools-review.txt",
+      "original_sha256": "fd6d781b81221fe416308bf15a2c43be385b03a62fb021fda1e4d69d9e558c64",
+      "public_sha256": "85c8db3c5204be6ab560c9d36185fe130f524d763b06581b082de75a1fe80797"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/events.jsonl",
+      "original_sha256": "a7bec4e9d91cb1458718d654de270c0b3378a54cd0674128d4069cc2eec2a9ed",
+      "public_sha256": "521e2054dcaac8ef6ba62284e6761a4ed1ee324bde03d7a35efc57c416834def"
+    },
+    {
+      "file": "logs/agents/final-baseline-A-1/raw-tools.json",
+      "original_sha256": "b148fd1864235790d0510a9c8e44b2f48d995667043950ad76689b6452356ec2",
+      "public_sha256": "77bb8710ec71bdecda22699af8eaa0af54ec89a7c0eaa70dcf0b0023efcb28de"
+    },
+    {
+      "file": "logs/agents/final-patched-C-3/command-review.txt",
+      "original_sha256": "5132d4e09b23bcbd681ef8c92d33ff14645f07f4a4ce3b96ddb43900c61bf3a8",
+      "public_sha256": "b8a4f6bce85c1d8a3d6e75f3649ab10f31871260d95eb7a1455e8cbca288d035"
+    },
+    {
+      "file": "logs/agents/final-patched-C-3/metadata.json",
+      "original_sha256": "85d2ad4bc93ab6d49c5e08d9e236d3c95f890c338bce3d42c687441c63051efb",
+      "public_sha256": "446ed3ea5dd48ae4bb992d9b8ca3b25267fde7c95297ab5499ecd5322f46a604"
+    },
+    {
+      "file": "logs/agents/final-patched-C-3/prompt.txt",
+      "original_sha256": "7573b713e50ee700ab41957b2fc55b8730bda52f6495ae739a5fb347926776c6",
+      "public_sha256": "8ff880e9f6f8c7c2fae638da99de37b92f950e32da5817706f8ba9ace1cccf6f"
+    },
+    {
+      "file": "logs/agents/final-patched-C-3/raw-tools-review.txt",
+      "original_sha256": "acc8550ce41c02632d0a8e376bfe473095e45e10ceb0c7245ec0c3fd524d4b3a",
+      "public_sha256": "77427c158d7bfaffee89df18d690771923d98da845d58bc4fd5f7ed191720c57"
+    },
+    {
+      "file": "logs/agents/final-patched-C-3/events.jsonl",
+      "original_sha256": "3355786f65ca03d6b564f2f4ec3ca140b5700ac4054a3cbf44e4ac1b497b57a8",
+      "public_sha256": "1d0eda9078d49769999ec3a8e45cb6cacb3eae1c214910bcf9a4dd62967785ba"
+    },
+    {
+      "file": "logs/agents/final-patched-C-3/raw-tools.json",
+      "original_sha256": "ec9965bfcb5fac56d53a0ed68bd081a9ab0cb1acd13909fc8fcab58b2ed3a600",
+      "public_sha256": "fb26e091f7530795fff9ba42df98a2e3ae1a6f4399e42d479b3984374aead638"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-3/command-review.txt",
+      "original_sha256": "ea159a1e559cbb3cf58311ba61864a39c34d71b573ab7c060ae8a66ab37233ab",
+      "public_sha256": "f52fa640ee0437eea8005cccc44d5174ccb0f5c64d327538e0b2db1dfdf82a20"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-3/metadata.json",
+      "original_sha256": "4abec5c5b1ac6bc52047105ef84e2f00da0b8ee414972e2a162677fd3d21865b",
+      "public_sha256": "332fbb39bf5b987b0af29c3f48088962290507f7e34fcd5250c8fd465c2d082d"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-3/prompt.txt",
+      "original_sha256": "a6538f46daa35aa07fa2638c50bc4c97110e36a14e4cb777cf54d0c31c50c806",
+      "public_sha256": "8588d012cd13eb41127269f277f33fbddb37ad8340a0ae7597c37132d00661e4"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-3/raw-tools-review.txt",
+      "original_sha256": "aed68285e723c4e26268f7f4f9761fd8d50b01183e130a1c97a003f07f95cfb8",
+      "public_sha256": "baefaaf06ea89e3a3ac0abd52dd046d32aef6c36a3b260b0ac5f4221224f659f"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-3/events.jsonl",
+      "original_sha256": "d52c874694526cbabb52808ba7acf6bc345036289efc03b684a781991ba8b978",
+      "public_sha256": "e1f22b4e9fb84773519f58a54e8e01231a9c619d8275507908e764d72c8ddd87"
+    },
+    {
+      "file": "logs/agents/final-baseline-C-3/raw-tools.json",
+      "original_sha256": "575e8e2096b2617d8999d0dffe3c3f7173cb41e3bd72cfce78fb2cf8e652286d",
+      "public_sha256": "708156bddb332f2edf819ce8d4a80c642eb01e7238f082b45435a76af21de339"
+    },
+    {
+      "file": "logs/agents/final-patched-C-2/command-review.txt",
+      "original_sha256": "21a3fad6fbebc4b4a92e1335f0ef49a0aea957a1c342a7d7f4283978669d279b",
+      "public_sha256": "8b56391c906aaef2792ebb68767c051972581e4bce4549e8230e3b65baec4156"
+    },
+    {
+      "file": "logs/agents/final-patched-C-2/metadata.json",
+      "original_sha256": "c91f876c9a60f3828ec4084ed07165f6bd82105945bcb609e31feab6683c1841",
+      "public_sha256": "f1592009918836c6173464732aac78a1bdb61e044306e8f49bb4528911dcd0b6"
+    },
+    {
+      "file": "logs/agents/final-patched-C-2/prompt.txt",
+      "original_sha256": "a6399facce0e8962d9463305d6c7506de8b46fe919e6858b4348822cbfea00cc",
+      "public_sha256": "c60ec10f5601176c84a0fa96f89659ff0213b6acdb390e738e1a165d872c8576"
+    },
+    {
+      "file": "logs/agents/final-patched-C-2/raw-tools-review.txt",
+      "original_sha256": "08bea491fffc516375f2172da8cf5ef9ad57ec4f27dd59f153d5135fb6ede301",
+      "public_sha256": "b22d022756425e7f4c042f4297985dc89a7e685c47df6a9a463da7b53b6c20dc"
+    },
+    {
+      "file": "logs/agents/final-patched-C-2/events.jsonl",
+      "original_sha256": "e370f47c2c2be3e30d6afdb181b6d1b23ad7dee48d436f3fbe633b291f346154",
+      "public_sha256": "d0278c66c2e1e5874f1a8845d6f69bfb413a2064b4405315c20869fc8391e628"
+    },
+    {
+      "file": "logs/agents/final-patched-C-2/raw-tools.json",
+      "original_sha256": "dac3e96e9d5cef91a6dd9a75166a5446ab905a0ccef1f963d88c6b2344da62a5",
+      "public_sha256": "b8e71e2854895a717d8b0c2bf5d47ff032e8e17153cca493748ed045820ab4fe"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-1/command-review.txt",
+      "original_sha256": "f7ee880b387a2c0ca398057b2a12f02e6eedc988aa647e0b8ac791a209d91122",
+      "public_sha256": "fa0b8b4d8eeb3baac75d6b8fa0b6393321a6d337aa66065cf522718c4024378c"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-1/metadata.json",
+      "original_sha256": "b72d9d91b1b6ac7de837c2e83fc24e489b4c8b292df9172be9f0ec52554b9cae",
+      "public_sha256": "18708900462551387e87ee4322d875b584af260b4c4ccf4ebdec89da66597e7b"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-1/prompt.txt",
+      "original_sha256": "e7f210c17481f542b1c8702a916512f9af2d8f3d4903319d2f387fde70c873aa",
+      "public_sha256": "d1077a18757688a1921b9730c7ed3ba2db13c8fc276032b75d870a3ebed214fa"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-1/raw-tools-review.txt",
+      "original_sha256": "17ff97fc4665858579f44df7b2535d3b8cbc3d1f796eb28ccf77ff87e6e8a347",
+      "public_sha256": "96d68ecc20398d9705331e225cba728e7a296b77d9443d76272ca76f79825f50"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-1/events.jsonl",
+      "original_sha256": "bdc6c846fd4801fb4c6e05de4583c3e462e73cc0f1b63f3239460cfcb099828f",
+      "public_sha256": "66cc14575c0c486c944b44860e803cecf3ece35bec6389d2f03e176339bb1e65"
+    },
+    {
+      "file": "logs/agents/final-baseline-E-1/raw-tools.json",
+      "original_sha256": "2992d23182eac0e504748e301828808493d3b4d9df6b4414cc0329eb6a61d67d",
+      "public_sha256": "ecae0be18614af3105c0e7d9f0289d6fa7c4046f86a82e8858d59a514addabb6"
+    },
+    {
+      "file": "logs/agents/final-patched-A-1/command-review.txt",
+      "original_sha256": "c9fee963b62aaa2ad80996e5abb50b307a8745d51dd3318ebfb513b801e240d8",
+      "public_sha256": "98cce9902a3e00c3f82008ead08c3bd6f7d29a02e985a3b962b4ae9c3eb925b3"
+    },
+    {
+      "file": "logs/agents/final-patched-A-1/metadata.json",
+      "original_sha256": "1068404896eec5d8ac7a06b2f531e3b598ff8e6507e09ff670ed469433ee3470",
+      "public_sha256": "19a165274afdba464132ad5d3984f841b846c237a03582d7fc806a21e25baed2"
+    },
+    {
+      "file": "logs/agents/final-patched-A-1/prompt.txt",
+      "original_sha256": "bcaf47f257e3112ca9a840de53bb8f6016805395135aec02addb15961af00b8c",
+      "public_sha256": "a8571426ed37be54c492ab4a50799822735497a35604ac5fb5b5924e344c9e1b"
+    },
+    {
+      "file": "logs/agents/final-patched-A-1/raw-tools-review.txt",
+      "original_sha256": "e703602694c57d52b6ad49e343475ad8d5471ea588ee93e2d5f4270882bdeb2a",
+      "public_sha256": "a1e2bf967635ed319e9ceb88d63180f14e12da067531dc23f52093764efabc05"
+    },
+    {
+      "file": "logs/agents/final-patched-A-1/events.jsonl",
+      "original_sha256": "89539061640915b73089af4e6b4f4791f6ade8aa200289550eb9831953acaa41",
+      "public_sha256": "3ba7f1232ccf41b8407b90969452e8913e1931068f851ea521c36daa2ab7fd29"
+    },
+    {
+      "file": "logs/agents/final-patched-A-1/raw-tools.json",
+      "original_sha256": "4f81735644ef106b3ffb27aa5b6dba5d4d5f64279fbb2bd4d6e7d0873237420c",
+      "public_sha256": "35cb3b41c5ffa6dddaac559ef8f3315a2165fad80da3b994590d2b1f7c0bde90"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-3/command-review.txt",
+      "original_sha256": "b948060b66c354ff7340f2f043f58e2b0cb224120728208e9e89ff4a91d0e27f",
+      "public_sha256": "9f1562aa0fb6712d983339c5871af191021f4731789019bcf6d881823e9a7fe8"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-3/metadata.json",
+      "original_sha256": "57577258641f41d50683e08eb777a864d2a1ba25f90e62a7585ea35fa307163e",
+      "public_sha256": "2dff59f06ac85da323de6aaf38d74374efaea71746c0b510af37919942d11904"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-3/prompt.txt",
+      "original_sha256": "3a02d08493553592944c0eb3aa153f913d89558c005c142f65c785d630676d25",
+      "public_sha256": "57a8c78012a9c8c6fd99a4d945a42f30a40a32bbb2e134ef1878b0e88369e35d"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-3/raw-tools-review.txt",
+      "original_sha256": "796654395a6b2abe41473c69668c481097d7530252933009e8ccb477a459742b",
+      "public_sha256": "ab72f9e2fc7c0425ffb78f4330360229f366a32ddb5605f40aa0aef098fb31d3"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-3/events.jsonl",
+      "original_sha256": "f7685de31484653316227ba930a7df7bc3b86d99f731a5ea54eca0de660ebd50",
+      "public_sha256": "7acac47d60991aa51f965914a1e98eae9b206ba89afe9a7fd4defc6f54d7504a"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-3/raw-tools.json",
+      "original_sha256": "7d319347a9ea2dd3edd213745407fb024a9de7137987589c01b661046a39044e",
+      "public_sha256": "46f94a11ecce2ee67815273dc2b82ee471997ea46dea96dc296ff3be9542799a"
+    },
+    {
+      "file": "logs/agents/final-patched-D-2/command-review.txt",
+      "original_sha256": "3488f4af5ba032a8ab75cec94e7dd60bd9f41ffda0f8b7075be5480e07df2576",
+      "public_sha256": "76a16d2c0dd440af25712d5e2787aaea3ee11c6d5aee60eef14a97f308cb9fe9"
+    },
+    {
+      "file": "logs/agents/final-patched-D-2/metadata.json",
+      "original_sha256": "731261b31b9245d27711a8d7f97d71347f8a4c7134a202bef1370520ef523188",
+      "public_sha256": "b5874a06783878836a31be60d9cda0239283abd124ffe4d659e7da290c278a93"
+    },
+    {
+      "file": "logs/agents/final-patched-D-2/prompt.txt",
+      "original_sha256": "d2f981e35d56d493fe1676d5a19d488fee07fba379a267962f37357584702963",
+      "public_sha256": "cb0b0f7c6a8334ba8cb3c2b99de5b04af8a8035cd55fb0e51703d1485b8f6239"
+    },
+    {
+      "file": "logs/agents/final-patched-D-2/raw-tools-review.txt",
+      "original_sha256": "1f67eb56e397d1d8642caddbdac355fb777b201df02c8a856ccadba5142dd37a",
+      "public_sha256": "42635c55de30b5a57fd557be54506d3e977ad1f1455d01babd45f6fe314a70cb"
+    },
+    {
+      "file": "logs/agents/final-patched-D-2/events.jsonl",
+      "original_sha256": "3ae44b71231e6c03d672ad052e49f0746c7f4d4fe2bdef3733322620678ed1e1",
+      "public_sha256": "9a0b57214c0f5479c302c8580490126722b09a7f4a9c57c0cdcfc2ab9f0993e6"
+    },
+    {
+      "file": "logs/agents/final-patched-D-2/raw-tools.json",
+      "original_sha256": "fcd431938cbae87fbca2d2e69dc0a766c92eeab07c3e648d65cf0c67547e9a90",
+      "public_sha256": "cd54ae9b8f34937ff18850ea715619fcbde9b9a2394e3287569cc7a11f1ef151"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-1/command-review.txt",
+      "original_sha256": "deeb3faa0cfea12771704bf3cbeed9462da3796fa782f268ac985571939296ce",
+      "public_sha256": "cc1fbeadaef7c8e708c4ab6dc5d2042849b2829719572e71c2de46ba0908a22b"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-1/metadata.json",
+      "original_sha256": "112a22f317cd6e77c7d7718c92a7b2064ef61fbe667df18cd1a8ece655208426",
+      "public_sha256": "1645527fc452c2bf9bcea9f4e42bd18794726295d9d3a73d7771a8a91c5439a9"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-1/prompt.txt",
+      "original_sha256": "681c0a6583f7f212187649dd8d36950b07bef3e204124f25d033d61558263b08",
+      "public_sha256": "c8c5ae30c200dfe2407f47f614b1afff9b261f54dfaf59f2a8c7efe3e2a9dfc5"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-1/raw-tools-review.txt",
+      "original_sha256": "ebb50c85f88ea7c31ab4c38e74cb95d02e5dab36a79a410014913f423def496e",
+      "public_sha256": "7e64c5bae22c9fa0d1abe2f977a903240a61af555e3d5ab5ab2ed439774f4b94"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-1/events.jsonl",
+      "original_sha256": "fdc8b3bac83afb4c5c8c1265ba171a02343c75ef7e8bde403236c64acdf10f12",
+      "public_sha256": "a6aab3438566d4cc8746a138800b30a8bd7e66b8efd9ed7b3dcd74abc7f8a944"
+    },
+    {
+      "file": "logs/agents/final-baseline-B-1/raw-tools.json",
+      "original_sha256": "de8aa7c5a2886daf25fe5e7d904c792da2ede6619dff376cebf59e5118cf2994",
+      "public_sha256": "ae224b43a1b4cbcd4f120a9ddd25db69398c39ccbfc6143b5d28c6ba349c6801"
+    },
+    {
+      "file": "logs/agents/final-patched-B-1/command-review.txt",
+      "original_sha256": "f9d6aa70c9820f372d538b2f9df58a43f1cbacb4f54e8cfa74bac7123be522ce",
+      "public_sha256": "1a8e856d6748a668a64812f43e5428429c9dee13e7dd084bdd05c1b4f1a9253a"
+    },
+    {
+      "file": "logs/agents/final-patched-B-1/metadata.json",
+      "original_sha256": "3adce8af4c96cd2f13de4f006e82224c470fa40f5550f2737fbf0d503958dfb3",
+      "public_sha256": "dbd0c7f37f5fa01de2556bb0e21e7480dd9dccc26ef91d665689ddc6480996d9"
+    },
+    {
+      "file": "logs/agents/final-patched-B-1/prompt.txt",
+      "original_sha256": "39f13574ce9749fd29850b8d645c26cfdb67a47623d51e42c49aa5cfda4a4b51",
+      "public_sha256": "04e7497cffaec193498b1c4975d1980fe377caff8e9b75a333ea920bddc6a077"
+    },
+    {
+      "file": "logs/agents/final-patched-B-1/raw-tools-review.txt",
+      "original_sha256": "51ac0c91e0be1aad8f190311ad1074ad360e1d1b7d98e55fcf064d7ce6cb4a9d",
+      "public_sha256": "09d207adfce4133ab1fa266b520db5660a41d7d98126599bf01e437bdf725bce"
+    },
+    {
+      "file": "logs/agents/final-patched-B-1/events.jsonl",
+      "original_sha256": "4e1778a7e1d8368e1882f6bb278c64ec8a872eeff4bc6f072b1d18b34f827314",
+      "public_sha256": "777e963a078f7648a128b223b67d7b11fb6d1e004d8ac13904469e3c7b21ffbf"
+    },
+    {
+      "file": "logs/agents/final-patched-B-1/raw-tools.json",
+      "original_sha256": "c06608346bcdef1a9a220be1946716458ec57efc0a794afc56300914496be2ee",
+      "public_sha256": "cc91d394c90506370cad29ec4420cc6a5c32c536313ccc8464a72808c95a6c40"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-2/command-review.txt",
+      "original_sha256": "6559bcbc96bedda85afdea5a52e7c4140a1b516800fb36f2650dd6f632802ddd",
+      "public_sha256": "e6b304889ac71f3a5c61e4aac8b3195f0f5187924e8a191e9c46d04bf6f8670b"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-2/metadata.json",
+      "original_sha256": "71aff5d6b80ac2ac911e761273b63e247c1390ec7ae52b1960f2c61481b823d0",
+      "public_sha256": "7e578f9178ff05a08543df6c9dc2401f8d80ca7a2f0f7a6f6a42b1fb522e4a95"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-2/prompt.txt",
+      "original_sha256": "af13c9c8829babf551290835eb16e5c303d941c64ba3bf3033e52b2ccea0f3b7",
+      "public_sha256": "99f6009158352f01aa9757c13c4cbabdfba90747d893ad8a26e432fe2b5cea3a"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-2/raw-tools-review.txt",
+      "original_sha256": "285d1b78296f5314d42be6c120a00b458d5137eb4d3b89cb53d8cadaf408deae",
+      "public_sha256": "6b8d405d807b99c628167cb51ea7e77d503d0c4853cae80cca9f121d76e70d80"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-2/events.jsonl",
+      "original_sha256": "8c03763a585a980a9f7fb22f0ced12a825fb1856255d5e3b14a84ef0dacd62b9",
+      "public_sha256": "05b87268130744910497f84d264718bde05c20fc2c5f3419a45711f409b5c664"
+    },
+    {
+      "file": "logs/agents/final-baseline-D-2/raw-tools.json",
+      "original_sha256": "dfa4ae89c060a1a8ac32810f80a48fd532d0a0fd84e562b7eefe03b5a9a2ab7b",
+      "public_sha256": "1c73e62e0339a1a79152d48335c27a9b453ba89c60e7b6a312eba658ed3cf7d2"
+    },
+    {
+      "file": "logs/agents/final-patched-D-3/command-review.txt",
+      "original_sha256": "3f69b4e9586ac2ea110db702ab7b24f653d39f541e05d70daf7da6f55c717489",
+      "public_sha256": "d3adcfd45d5ea61e5b01395cec43308a37bb9d612b7ad3c0c3a5b7d75d2dcd0a"
+    },
+    {
+      "file": "logs/agents/final-patched-D-3/metadata.json",
+      "original_sha256": "cd3b5dce91c5dc409fd0c714ef3a06744173e35faa1803f9241638a36fac2c9e",
+      "public_sha256": "e1d0a16bab4e71cd8d04755a04ad7e059a0d7af7099fd45fd834a19cf30361f4"
+    },
+    {
+      "file": "logs/agents/final-patched-D-3/prompt.txt",
+      "original_sha256": "b16ed33e6a8186daa8ccc3fec0a1886d0e1721561aa72afd8e15dcba17b83af1",
+      "public_sha256": "e7fcb90424399664e14cede09f09083b68c2449edc48ca5601b7adc34cf4ae4e"
+    },
+    {
+      "file": "logs/agents/final-patched-D-3/raw-tools-review.txt",
+      "original_sha256": "995f1d5ef0d17454201a4af81b06677707bb5de95ac844d393eb62e92ba8aa2e",
+      "public_sha256": "4866bae0d10895fa4be6819c04b433fee1a0dfc85737200c544929d3f5467c7c"
+    },
+    {
+      "file": "logs/agents/final-patched-D-3/events.jsonl",
+      "original_sha256": "918799a2e4ca0b075d694ef0cd662670dd70ca55976d4bbf3fd1413abdb61096",
+      "public_sha256": "0a8adde84f82e623068acf3fe4237df435a33fd07e36dc1a13fc495c2ce39b34"
+    },
+    {
+      "file": "logs/agents/final-patched-D-3/raw-tools.json",
+      "original_sha256": "6d70b8c303aa16a12594846733dbfdab2ee1eef90821d0bab1ba318582691b9a",
+      "public_sha256": "ef9f4fa0b3a218b575fb21f54a0ba2bcefd5026c8615b1078cdeea9556ea358b"
+    },
+    {
+      "file": "scripts/run_agents.py",
+      "original_sha256": "e76a53a8448772041564ec5305436f29f5dbfdc483129ae126de0798d03e9cdc",
+      "public_sha256": "5b0681f45d7c11803b8750fdfc9de43f999bd01327fbdba4032808c2a3a8acea"
+    }
+  ]
+}

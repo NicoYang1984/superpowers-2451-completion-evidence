@@ -1,0 +1,37 @@
+[
+  {
+    "command": "bash tests/skill-size/test-skill-size.sh",
+    "exit": 0,
+    "log": "test-skill-size.txt"
+  },
+  {
+    "command": "bash tests/claude-code/test-sdd-workspace.sh",
+    "exit": 0,
+    "log": "test-sdd-workspace.txt"
+  },
+  {
+    "command": "bash tests/claude-code/test-executing-plans-scripts.sh",
+    "exit": 0,
+    "log": "test-executing-plans-scripts.txt"
+  },
+  {
+    "command": "bash tests/claude-code/run-skill-tests.sh",
+    "exit": 1,
+    "log": "run-skill-tests.txt"
+  },
+  {
+    "command": "bash tests/codex/test-marketplace-manifest.sh",
+    "exit": 0,
+    "log": "test-marketplace-manifest.txt"
+  },
+  {
+    "command": "bash tests/codex/test-package-codex-plugin.sh",
+    "exit": 1,
+    "log": "test-package-codex-plugin.txt"
+  },
+  {
+    "command": "bash tests/hooks/test-session-start.sh",
+    "exit": 1,
+    "log": "test-session-start.txt"
+  }
+]

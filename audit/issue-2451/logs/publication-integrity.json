@@ -1,0 +1,9 @@
+{
+  "final_recordings": 30,
+  "restored_fixture_bundles": 30,
+  "citation_bounds_checked": 40,
+  "summary_recomputed": true,
+  "production_patch_unchanged": true,
+  "license_unchanged": true,
+  "scope": "Archive integrity and numeric aggregation only; no model rerun or independent semantic grading."
+}

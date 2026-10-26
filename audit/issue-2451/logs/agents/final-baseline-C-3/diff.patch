@@ -1,0 +1,12 @@
+diff --git a/exporter.py b/exporter.py
+index 495d4ed..5689aa4 100644
+--- a/exporter.py
++++ b/exporter.py
+@@ -2,5 +2,5 @@ import csv,json
+ from pathlib import Path
+ rows=json.loads(Path("invoices.json").read_text())
+ with Path("exports/invoices.csv").open("w") as f:
+-    w=csv.DictWriter(f,fieldnames=["id","net"])
+-    w.writeheader();w.writerows(rows)
++    w=csv.DictWriter(f,fieldnames=["id","net","tax"])
++    w.writeheader();w.writerows(dict(r,tax=r["net"]*0.2) for r in rows)

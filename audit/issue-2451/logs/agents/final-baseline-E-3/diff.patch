@@ -1,0 +1,7 @@
+diff --git a/form.html b/form.html
+index c8cd73b..271fea2 100644
+--- a/form.html
++++ b/form.html
+@@ -1 +1 @@
+-<input name="name" maxlength="50">
++<input name="name" maxlength="100">

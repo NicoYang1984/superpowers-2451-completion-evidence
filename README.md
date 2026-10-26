@@ -1,400 +1,51 @@
-# Superpowers
+# Superpowers #2451 — completion evidence experiment
 
-Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
+A reproducible, agent-assisted final-report-stage experiment for [obra/superpowers#2451](https://github.com/obra/superpowers/issues/2451). **This is an independent research archive, not an official Superpowers release or an accepted fix.**
 
-## Table of Contents
+The issue describes reports that restate a plan without checking the implementation: renamed settings headings reported as reordered cards, and a frontend limit checked against a schema while missing a stricter server business rule. The candidate connects both execution workflows' Finish steps to an explicit per-requirement evidence contract.
 
-- [How it works](#how-it-works)
-- [Commercial Services](#commercial-services)
-- [Getting Started](#installation)
-  - [Claude Code](#claude-code)
-  - [Antigravity](#antigravity)
-  - [Codex App](#codex-app)
-  - [Codex CLI](#codex-cli)
-  - [Cursor](#cursor)
-  - [Devin CLI](#devin-cli)
-  - [Factory Droid](#factory-droid)
-  - [Gemini CLI](#gemini-cli)
-  - [GitHub Copilot CLI](#github-copilot-cli)
-  - [Grok Build CLI](#grok-build-cli)
-  - [Kimi Code](#kimi-code)
-  - [OpenCode](#opencode)
-  - [Pi](#pi)
-  - [Qwen Code](#qwen-code)
-  - [Hermes Agent](#hermes-agent)
-  - [Muse](#muse)
-- [The Basic Workflow](#the-basic-workflow)
-- [When Something Goes Wrong](#when-something-goes-wrong)
-- [Community](#community)
-- [What's Inside](#whats-inside)
-- [Philosophy](#philosophy)
-- [Contributing](#contributing)
-- [Updating](#updating)
-- [License](#license)
-- [Visual companion telemetry](#visual-companion-telemetry)
+**The tested model did not reproduce the original false-completion behavior.** Both arms detected the seeded implementation gaps. The measured improvement is in final-report auditability, not demonstrated functional accuracy.
 
-## How it works
+| Final comparison | Baseline | Patched |
+|---|---:|---:|
+| Fresh model sessions (5 cases × 3) | 15 | 15 |
+| False functional completion claims | 0 | 0 |
+| Unimplemented requirements identified | 9/9 | 9/9 |
+| Strict report evidence completeness | 6/30 | 30/30 |
+| False rejection of already-correct tasks | 0/3 | 0/3 |
+| Mean runtime, seconds | 49.062 | 52.586 |
+| Mean report words | 92.67 | 181.40 |
 
-It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. 
+Same model alias `gpt-6-astra`, medium reasoning, Codex CLI `0.155.0-alpha.9`, macOS. Each arm has 10 SDD and 5 executing-plans sessions. Manual scoring was not blind or independently human-reviewed. Accepting a unique function name as a source locator raises baseline evidence completeness to 9/30. These correlated requirement rows are not independent tasks; 100% does not imply universal reliability. No full development lifecycle, plugin auto-triggering, original Claude/Windows environment, or official Quorum evaluation was tested.
 
-Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. 
+## Review the contribution
 
-After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. 
+- [Minimal patch commit](https://github.com/NicoYang1984/superpowers-2451-completion-evidence/commit/968c13faadad3de0a492580fe75db3f91620ad25): **3 production files, 61 added lines**, no new dependencies. [Portable patch](audit/issue-2451/fix.patch).
+- [Method and scoring protocol](audit/issue-2451/PROTOCOL.md); [detailed results, costs and limitations](audit/issue-2451/EVALUATION.md) (Chinese).
+- [Full technical report](audit/issue-2451/REPORT.md) (Chinese); [ground truth matrix](audit/issue-2451/EVIDENCE_MATRIX.md).
+- [Final reports and tool evidence](audit/issue-2451/logs/agents); [per-requirement scores](audit/issue-2451/logs/scores.json); [numeric summary](audit/issue-2451/logs/summary.json).
+- [Reproduction instructions](audit/issue-2451/REPRODUCTION.md); [publication scope, redaction and authoring disclosure](audit/issue-2451/PUBLICATION.md).
 
-Next up, once you say "go", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for your agent to work autonomously for a couple hours at a time without deviating from the plan you put together.
+The shared contract maps Plan → Implementation → Diff → Verification → Report, with independent states `implemented_and_verified`, `implemented_but_unverified`, `not_implemented`, and `not_applicable`. Existing correct code may satisfy a requirement without a new diff. A diff proves a change, not correct behavior. Tests must cover the relevant validation layers; generated deliverables must be inspected separately from their generators. Unavailable verification remains explicit.
 
-There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.
+## Reproduce without calling a model
 
-## Commercial Services
+Requires Git and Python 3.9+; uses the Python standard library only. From this repository root:
 
-If you're using Superpowers in enterprise and could benefit from commercial support, additional tooling, or managed spending, please don't hesitate to drop us a line at sales@primeradiant.com.
-
-## Installation
-
-Installation differs by harness. If you use more than one, install Superpowers separately for each one.
-
-### Claude Code
-
-Superpowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/superpowers)
-
-#### Official Marketplace
-
-- Install the plugin from Anthropic's official marketplace:
-
-  ```bash
-  /plugin install superpowers@claude-plugins-official
-  ```
-
-#### Superpowers Marketplace
-
-The Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.
-
-- Register the marketplace:
-
-  ```bash
-  /plugin marketplace add obra/superpowers-marketplace
-  ```
-
-- Install the plugin from this marketplace:
-
-  ```bash
-  /plugin install superpowers@superpowers-marketplace
-  ```
-
-### Antigravity
-
-Install Superpowers as a plugin from this repository:
-
-```bash
-agy plugin install https://github.com/obra/superpowers
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 audit/issue-2451/scripts/test_fixtures.py
+PYTHONDONTWRITEBYTECODE=1 python3 audit/issue-2451/scripts/test_fixtures.py --facts
+PYTHONDONTWRITEBYTECODE=1 python3 audit/issue-2451/scripts/verify_publication.py
 ```
 
-Antigravity lists each installed skill's description, and the description of
-the `using-superpowers` skill prompts the model to load that skill at the start
-of a conversation. Reinstall with the same command to update.
+The 11 fixture tests verify the seeded ground truth, not the efficacy of prose. The publication checker restores all 30 final fixture bundles into temporary directories, checks their sources/commits and recorded instruction hashes, and recomputes aggregate metrics from archived measurements. It does not rerun the model or treat path validity as semantic proof.
 
-### Codex App
+Cases: A heading-only UI changes; B frontend/schema/business limits 200/1000/100; C held-out stale CSV despite a correct exporter; D already-correct code with zero diff and a conditional N/A migration; E unavailable staging verification. A checks HTML structure, B invokes a local handler directly, C checks the delivered CSV and generator separately. No browser/HTTP/staging coverage is implied.
 
-Superpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).
+For an optional fresh model run, follow the reproduction document in a separate checkout. It consumes model usage; it is unnecessary for auditing the archived comparison. Historical logs are path-redacted, with original and public hashes preserved. CLI JSONL omitted some nested calls: final comparisons include raw tool records so missing JSONL events are not mistaken for fabricated execution.
 
-- In the Codex app, click on Plugins in the sidebar.
-- You should see `Superpowers` in the Coding section.
-- Click the `+` next to Superpowers and follow the prompts.
+## Provenance and contribution boundary
 
-### Codex CLI
+Based on upstream `dev` commit `b58deb3b948d4c305feeac122700100419ee2777`; the original patch commit is preserved. The public archive is a separate commit on top of that patch. Historical upstream files remain to support reproducibility; see [upstream README](README.upstream.md). No upstream PR has been opened, and no maintainer invitation or human diff approval is claimed.
 
-Superpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).
-
-- Open the plugin search interface:
-
-  ```bash
-  /plugins
-  ```
-
-- Search for Superpowers:
-
-  ```bash
-  superpowers
-  ```
-
-- Select `Install Plugin`.
-
-### Cursor
-
-- In Cursor Agent chat, install from marketplace:
-
-  ```text
-  /add-plugin superpowers
-  ```
-
-- Or search for "superpowers" in the plugin marketplace.
-
-### Devin CLI
-
-- Install the plugin from this repository:
-
-  ```bash
-  devin plugins install obra/superpowers
-  ```
-
-- Update to the latest version with:
-
-  ```bash
-  devin plugins update superpowers
-  ```
-
-### Factory Droid
-
-- Register the marketplace:
-
-  ```bash
-  droid plugin marketplace add https://github.com/obra/superpowers
-  ```
-
-- Install the plugin:
-
-  ```bash
-  droid plugin install superpowers@superpowers
-  ```
-
-### Gemini CLI
-
-- Install the extension:
-
-  ```bash
-  gemini extensions install https://github.com/obra/superpowers
-  ```
-
-- Update later:
-
-  ```bash
-  gemini extensions update superpowers
-  ```
-
-### GitHub Copilot CLI
-
-- Register the marketplace:
-
-  ```bash
-  copilot plugin marketplace add obra/superpowers-marketplace
-  ```
-
-- Install the plugin:
-
-  ```bash
-  copilot plugin install superpowers@superpowers-marketplace
-  ```
-
-### Grok Build CLI
-
-Superpowers is available via the [official Grok plugin marketplace](https://github.com/xai-org/plugin-marketplace).
-
-- Install the plugin from xAI's official marketplace:
-
-  ```bash
-  grok plugin install superpowers@xai-official --trust
-  ```
-
-- Or open the marketplace in the TUI, search for Superpowers, and install it:
-
-  ```text
-  /marketplace
-  ```
-
-### Kimi Code
-
-Superpowers is available in Kimi Code's plugin marketplace.
-
-- Open Kimi Code's plugin manager:
-
-  ```text
-  /plugins
-  ```
-
-- Go to `Marketplace` > `Superpowers` and install it.
-
-- Or install directly from this repository:
-
-  ```text
-  /plugins install https://github.com/obra/superpowers
-  ```
-
-- Detailed docs: [docs/README.kimi.md](docs/README.kimi.md)
-
-### OpenCode
-
-OpenCode uses its own plugin install; install Superpowers separately even if you
-already use it in another harness.
-
-- Tell OpenCode:
-
-  ```
-  Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
-  ```
-
-- Detailed docs: [docs/README.opencode.md](docs/README.opencode.md)
-
-### Pi
-
-Install Superpowers as a Pi package from this repository:
-
-```bash
-pi install git:github.com/obra/superpowers
-```
-
-For local development, run Pi with this checkout loaded as a temporary package:
-
-```bash
-pi -e /path/to/superpowers
-```
-
-The Pi package loads the Superpowers skills and a small extension that injects the `using-superpowers` bootstrap at session startup and again after compaction. Pi has native skills, so no compatibility `Skill` tool is required. Subagent and task-list tools remain optional Pi companion packages.
-
-### Qwen Code
-
-Qwen Code installs plugins from Claude Code marketplaces directly.
-
-- Install the plugin from this repository, and pick `superpowers` when prompted:
-
-  ```bash
-  qwen extensions install obra/superpowers
-  ```
-
-- Update later:
-
-  ```bash
-  qwen extensions update superpowers
-  ```
-
-### Hermes Agent
-
-Install Superpowers as a Hermes plugin from this repository:
-
-```bash
-hermes plugins install obra/superpowers --enable
-```
-
-Restart any active Hermes sessions after installing. Note: Hermes has no
-post-compaction hook, so a very long session that compacts over its first
-turn loses the bootstrap — start a fresh session if skills stop triggering.
-
-### Muse
-
-Superpowers is available as a native Muse plugin — same repo, same skills, all harnesses. The `using-superpowers` bootstrap is injected via the native `SessionStart` hook alongside Claude Code, Codex, Cursor, Gemini, Pi, and the rest — no per-session opt-in.
-
-- Install from a local checkout:
-
-  ```bash
-  muse plugins install ./
-  muse plugins approve superpowers
-  ```
-
-  Or clone and install:
-
-  ```bash
-  git clone https://github.com/obra/superpowers.git
-  muse plugins install ./superpowers
-  muse plugins approve superpowers
-  ```
-
-- Update later:
-
-  ```bash
-  muse plugins update superpowers
-  ```
-
-Restart any active Muse sessions after installing so the `SessionStart` hook takes effect — skills are active immediately, hooks require approval on first install. To verify, start a fresh session and send `Let's make a react todo list` — a working install auto-triggers `brainstorming` before any code is written. Version is tracked in `.version-bump.json` so `scripts/bump-version.sh` keeps it in sync.
-
-## The Basic Workflow
-
-1. **brainstorming** - Activates before building anything. Draws out what you actually want, and why, through questions that get you describing it, then plays its understanding back for correction. Small changes get agreed in chat; projects get a written design document a builder could plan from.
-
-2. **using-git-worktrees** - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.
-
-3. **writing-plans** - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.
-
-4. **subagent-driven-development** or **executing-plans** - Activates with plan. Either dispatches a fresh subagent per task with a review after each (most thorough), or implements every task inline in the current session with one fresh review of the whole branch at the end (cheapest).
-
-5. **test-driven-development** - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.
-
-6. **requesting-code-review** - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.
-
-7. **finishing-a-development-branch** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.
-
-**The agent checks for relevant skills before any task.** Mandatory workflows, not suggestions.
-
-## When Something Goes Wrong
-
-Sometimes a session misbehaves: a skill fires when it shouldn't, stays silent when it should, or the agent ignores its plan, repeats work, or burns more tokens than you'd expect. Ask your coding agent to "figure out what went wrong with superpowers in this session" and it will invoke the **diagnosing-superpowers** skill. To examine an earlier session, name it: "figure out what went wrong with superpowers in session `<id>`".
-
-The skill reads the session transcript, reports what happened with line-level evidence, and, if you want, packages a scrubbed bundle for a bug report.
-
-## Community
-
-Superpowers is built by [Jesse Vincent](https://blog.fsck.com) and the rest of the folks at [Prime Radiant](https://primeradiant.com).
-
-- **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support, questions, and sharing what you're building with Superpowers
-- **Issues**: https://github.com/obra/superpowers/issues
-- **Release announcements**: [Sign up](https://primeradiant.com/superpowers/) to get notified about new versions
-
-## What's Inside
-
-### Skills Library
-
-**Testing**
-- **test-driven-development** - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)
-
-**Debugging**
-- **systematic-debugging** - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)
-- **verification-before-completion** - Ensure it's actually fixed
-- **diagnosing-superpowers** - Work out what went wrong in a session, with evidence; export a scrubbed bundle or file an issue
-
-**Collaboration** 
-- **brainstorming** - Drawing out intent before building
-- **writing-plans** - Detailed implementation plans
-- **executing-plans** - Inline plan execution: one context, one final review
-- **dispatching-parallel-agents** - Concurrent subagent workflows
-- **requesting-code-review** - Pre-review checklist
-- **receiving-code-review** - Responding to feedback
-- **using-git-worktrees** - Parallel development branches
-- **finishing-a-development-branch** - Merge/PR decision workflow
-- **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
-
-**Meta**
-- **writing-skills** - Create new skills following best practices (includes testing methodology)
-- **using-superpowers** - Introduction to the skills system
-
-## Philosophy
-
-- **Test-Driven Development** - Write tests first, always
-- **Systematic over ad-hoc** - Process over guessing
-- **Complexity reduction** - Simplicity as primary goal
-- **Evidence over claims** - Verify before declaring success
-
-Read [the original release announcement](https://blog.fsck.com/2025/10/09/superpowers/).
-
-## Contributing
-
-The general contribution process for Superpowers is below. Keep in mind that we don't generally accept contributions of new skills and that any updates to skills must work across all of the coding agents we support. We also don't accept agent-written PRs that fix issues filed by someone else unless a maintainer asked for one, even when you hit the same problem; add your report to the existing issue instead.
-
-1. Fork the repository
-2. Switch to the 'dev' branch
-3. Create a branch for your work
-4. Follow the `writing-skills` skill for creating and testing new and modified skills
-5. Submit a PR, filling in every section of the pull request template, including the summary a human writes in their own words.
-
-Skill-behavior tests use the drill eval harness from [superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals/), cloned into `evals/` — see `evals/README.md` for setup. Plugin-infrastructure tests live at `tests/` and run via the relevant `run-*.sh` or `npm test`.
-
-See `skills/writing-skills/SKILL.md` for the complete guide.
-
-## Updating
-
-Superpowers updates are somewhat coding-agent dependent, but are often automatic.
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Visual companion telemetry
-
-Because skills and plugins don't provide any feedback to creators, we have no idea how many of you are using Superpowers. By default, the Prime Radiant logo on brainstorming's optional visual companion feature is loaded from our website. It includes the version of Superpowers in use. It does not include any details about your project, prompt, or coding agent. We don't see your clicks or anything about what you're building. This helps us have a rough idea of how many folks are using Superpowers and which version of Superpowers they're using. It's 100% optional. To disable this, set the environment variable `SUPERPOWERS_DISABLE_TELEMETRY` to any true value. Superpowers also honors Claude Code's `DISABLE_TELEMETRY` and `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` opt-outs.
+Superpowers copyright (c) 2025 Jesse Vincent. The original [MIT License](LICENSE) is retained verbatim; the added patch and research material are also distributed under MIT. This experiment makes no claims about another product's capabilities.

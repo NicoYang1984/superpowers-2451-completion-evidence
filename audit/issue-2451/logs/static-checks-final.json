@@ -1,0 +1,31 @@
+{
+  "links": [
+    {
+      "source": "skills/subagent-driven-development/references/final-review.md",
+      "target": "../../requesting-code-review/code-reviewer.md",
+      "exists": true
+    },
+    {
+      "source": "skills/subagent-driven-development/references/final-review.md",
+      "target": "../re-review-prompt.md",
+      "exists": true
+    },
+    {
+      "source": "skills/subagent-driven-development/references/final-review.md",
+      "target": "../../verification-before-completion/references/completion-evidence.md",
+      "exists": true
+    },
+    {
+      "source": "skills/executing-plans/SKILL.md",
+      "target": "../requesting-code-review/code-reviewer.md",
+      "exists": true
+    },
+    {
+      "source": "skills/executing-plans/SKILL.md",
+      "target": "../verification-before-completion/references/completion-evidence.md",
+      "exists": true
+    }
+  ],
+  "diff_check_exit": 0,
+  "reference_words": 434
+}

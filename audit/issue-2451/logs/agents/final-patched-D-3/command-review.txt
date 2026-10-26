@@ -1,0 +1,106 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g '"'!*node_modules*'"' -g '"'!*.lock'"' -g '"'!vendor/**'"'"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-patched-D-3
+HANDOFF.md
+slug.py
+test_slug.py
+PLAN.md
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/verification-before-completion/references/completion-evidence.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md instructions/skills/verification-before-completion/references/completion-evidence.md'
+EXIT: 0
+OUTPUT TAIL:
+ contradicts the requirement, even if related code changed or tests pass.
+  - `not_applicable`: the requirement's condition does not apply. State the
+    condition and the evidence for that decision; difficulty is not a reason.
+- **Implementation evidence:** inspected `file:line` or deliverable location
+  and the relevant change in the recorded revision range. If existing code
+  already meets the requirement, cite and verify that code; no new diff is
+  needed. If the implementation cannot be inspected, state that uncertainty
+  rather than asserting it exists or is absent.
+- **Verification evidence:** the actual command or runtime check, observed
+  result, and its scope. Include enough detail to repeat it, or a durable
+  location containing those details. For an inline check, include its executable
+  body, not just an interpreter name. Copy the command and observed result
+  from a completed tool execution; an intended check has no result. If no
+  execution is recorded, report "not run". Source inspection is evidence of
+  what you read, not evidence that a test ran. For missing verification, name
+  the gap.
+
+Match evidence to the claim. A diff proves a change, not correct behavior;
+a passing test proves only what it exercises. For behavior spanning layers,
+trace the exercised path through each relevant layer and name which ones
+were checked. Inspect the actual delivered artifact as well as its producer.
+
+Write the summary from this map. Only `implemented_and_verified` rows support
+unqualified completion claims. Surface the other statuses and remaining
+work explicitly; a clean review does not erase them. Preserve the map and
+the evidence it cites in the final response or a durable, human-reachable
+artifact before workspace cleanup; links into deleted scratch do not count.
+
+
+COMMAND: /bin/zsh -lc "nl -ba slug.py; nl -ba test_slug.py; rg -n --hidden -g '"'!.git/**'"' 'Ruling:' ."
+EXIT: 0
+OUTPUT TAIL:
+     1	def slug(value):
+     2	    return value.strip().lower()
+     1	import unittest
+     2	from slug import slug
+     3	class SlugTest(unittest.TestCase):
+     4	    def test_spaces_and_case(self):
+     5	        self.assertEqual(slug("  Hello WORLD  "), "hello world")
+     6	if __name__ == "__main__": unittest.main()
+./instructions/skills/subagent-driven-development/SKILL.md:23:`Ruling: <what you decided> — <why> — <what it costs if wrong>`, and keep
+./instructions/skills/subagent-driven-development/references/final-review.md:38:Before you delete anything, collect every ledger line containing `Ruling:` —
+
+
+COMMAND: /bin/zsh -lc "git status --short; git rev-parse HEAD; git diff 359d33bea61ce8ddf73a9ea170c5533dafabba6a..359d33bea61ce8ddf73a9ea170c5533dafabba6a; git diff HEAD; git ls-files; rg --files --hidden -g '"'!.git/**'"'"
+EXIT: 0
+OUTPUT TAIL:
+: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-5peuiXt7' (errno=Operation not permitted)
+359d33bea61ce8ddf73a9ea170c5533dafabba6a
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-yDNcIJz8' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-Hglgb2JU' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-rc5oFdeQ' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-lauYCCSs' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-aS33z50V' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-NMum52xv' (errno=Operation not permitted)
+HANDOFF.md
+PLAN.md
+slug.py
+test_slug.py
+HANDOFF.md
+slug.py
+test_slug.py
+PLAN.md
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/verification-before-completion/references/completion-evidence.md
+
+
+COMMAND: /bin/zsh -lc 'python3 -B -m unittest -v'
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-ItnUZTyz' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-BxgHq80a' (errno=Operation not permitted)
+test_spaces_and_case (test_slug.SlugTest) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

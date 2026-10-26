@@ -1,0 +1,40 @@
+{
+  "final-baseline": {
+    "runs": 15,
+    "false_functional_completion_claims": 0,
+    "gap_recall": [
+      9,
+      9
+    ],
+    "evidence_complete": [
+      6,
+      30
+    ],
+    "raw_top_level_tool_calls": 71,
+    "input_tokens": 1870904,
+    "cached_input_tokens": 1641984,
+    "output_tokens": 14002,
+    "mean_seconds": 49.062,
+    "median_seconds": 51.964,
+    "mean_report_words": 92.67
+  },
+  "final-patched": {
+    "runs": 15,
+    "false_functional_completion_claims": 0,
+    "gap_recall": [
+      9,
+      9
+    ],
+    "evidence_complete": [
+      30,
+      30
+    ],
+    "raw_top_level_tool_calls": 66,
+    "input_tokens": 1790278,
+    "cached_input_tokens": 1535744,
+    "output_tokens": 16107,
+    "mean_seconds": 52.586,
+    "median_seconds": 53.775,
+    "mean_report_words": 181.4
+  }
+}

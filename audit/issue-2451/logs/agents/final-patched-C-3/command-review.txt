@@ -1,0 +1,108 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g '"'!node_modules'"' -g '"'!vendor'"' -g '"'!'"\\.git'"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-patched-C-3
+HANDOFF.md
+PLAN.md
+exports/invoices.csv
+exporter.py
+invoices.json
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/verification-before-completion/references/completion-evidence.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md instructions/skills/verification-before-completion/references/completion-evidence.md'
+EXIT: 0
+OUTPUT TAIL:
+ contradicts the requirement, even if related code changed or tests pass.
+  - `not_applicable`: the requirement's condition does not apply. State the
+    condition and the evidence for that decision; difficulty is not a reason.
+- **Implementation evidence:** inspected `file:line` or deliverable location
+  and the relevant change in the recorded revision range. If existing code
+  already meets the requirement, cite and verify that code; no new diff is
+  needed. If the implementation cannot be inspected, state that uncertainty
+  rather than asserting it exists or is absent.
+- **Verification evidence:** the actual command or runtime check, observed
+  result, and its scope. Include enough detail to repeat it, or a durable
+  location containing those details. For an inline check, include its executable
+  body, not just an interpreter name. Copy the command and observed result
+  from a completed tool execution; an intended check has no result. If no
+  execution is recorded, report "not run". Source inspection is evidence of
+  what you read, not evidence that a test ran. For missing verification, name
+  the gap.
+
+Match evidence to the claim. A diff proves a change, not correct behavior;
+a passing test proves only what it exercises. For behavior spanning layers,
+trace the exercised path through each relevant layer and name which ones
+were checked. Inspect the actual delivered artifact as well as its producer.
+
+Write the summary from this map. Only `implemented_and_verified` rows support
+unqualified completion claims. Surface the other statuses and remaining
+work explicitly; a clean review does not erase them. Preserve the map and
+the evidence it cites in the final response or a durable, human-reachable
+artifact before workspace cleanup; links into deleted scratch do not count.
+
+
+COMMAND: /bin/zsh -lc "git status --short --untracked-files=all; git rev-parse HEAD; git diff 7017e3eeb4b7f3fca33ae23042038d82960859ab..c08745c195042b769de098033662ec31caa25ab5; git diff; git diff --cached; rg --files --hidden -g '"'!.git'"'; nl -ba exporter.py; nl -ba invoices.json; nl -ba exports/invoices.csv"
+EXIT: 0
+OUTPUT TAIL:
+es.csv").open("w") as f:
+-    w=csv.DictWriter(f,fieldnames=["id","net"])
+-    w.writeheader();w.writerows(rows)
++    w=csv.DictWriter(f,fieldnames=["id","net","tax"])
++    w.writeheader();w.writerows(dict(r,tax=r["net"]*0.2) for r in rows)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-lKNBQ2pw' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-RSW1URg7' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-YmXWnLME' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-BD6vz4zk' (errno=Operation not permitted)
+HANDOFF.md
+PLAN.md
+exports/invoices.csv
+exporter.py
+invoices.json
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/verification-before-completion/references/completion-evidence.md
+     1	import csv,json
+     2	from pathlib import Path
+     3	rows=json.loads(Path("invoices.json").read_text())
+     4	with Path("exports/invoices.csv").open("w") as f:
+     5	    w=csv.DictWriter(f,fieldnames=["id","net","tax"])
+     6	    w.writeheader();w.writerows(dict(r,tax=r["net"]*0.2) for r in rows)
+     1	[{"id":"sample-1","net":100},{"id":"sample-2","net":50}]
+     1	id,net
+     2	sample-1,100
+
+
+COMMAND: /bin/zsh -lc "python3 -B -c 'import csv, io, json
+from pathlib import Path
+from unittest.mock import patch
+source = Path(\"exporter.py\").read_text()
+rows = json.loads(Path(\"invoices.json\").read_text())
+expected = [{\"id\": r[\"id\"], \"net\": str(r[\"net\"]), \"tax\": str(r[\"net\"] * 0.2)} for r in rows]
+def valid(text):
+    reader = csv.DictReader(io.StringIO(text))
+    return reader.fieldnames == [\"id\", \"net\", \"tax\"] and list(reader) == expected
+print(\"R1 delivered CSV:\", \"PASS\" if valid(Path(\"exports/invoices.csv\").read_text()) else \"FAIL\")
+class Capture(io.StringIO):
+    def close(self): pass
+output = Capture()
+with patch.object(Path, \"open\", return_value=output), patch.object(Path, \"read_text\", return_value=json.dumps(rows)):
+    exec(compile(source, \"exporter.py\", \"exec\"), {})
+assert valid(output.getvalue()), output.getvalue()
+print(\"R2 exporter in-memory execution: PASS (both records, id/net/tax, taxes 20.0 and 10.0; disk writing mocked)\")'"
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-1EHujjRV' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-d5iwRYr2' (errno=Operation not permitted)
+R1 delivered CSV: FAIL
+R2 exporter in-memory execution: PASS (both records, id/net/tax, taxes 20.0 and 10.0; disk writing mocked)

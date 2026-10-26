@@ -1,0 +1,126 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g '"'!*lock*'"' -g '"'!node_modules'"' -g '"'!vendor'"'"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-baseline-B-3
+HANDOFF.md
+PLAN.md
+schema.json
+server.py
+form.html
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md'
+EXIT: 0
+OUTPUT TAIL:
+ct!", "Done!", etc.)
+- About to commit/push/PR without verification
+- Trusting agent success reports
+- Relying on partial verification
+- Thinking "just this once"
+- Tired and wanting work over
+- **ANY wording implying success without having run verification**
+
+## Rationalization Prevention
+
+| Excuse | Reality |
+|--------|---------|
+| "Should work now" | RUN the verification |
+| "I'm confident" | Confidence ≠ evidence |
+| "Just this once" | No exceptions |
+| "Linter passed" | Linter ≠ compiler |
+| "Agent said success" | Verify independently |
+| "I'm tired" | Exhaustion ≠ excuse |
+| "Partial check is enough" | Partial proves nothing |
+| "Different words so rule doesn't apply" | Spirit over letter |
+
+## Key Patterns
+
+**Tests:**
+```
+✅ [Run test command] [See: 34/34 pass] "All tests pass"
+❌ "Should pass now" / "Looks correct"
+```
+
+**Regression tests (TDD Red-Green):**
+```
+✅ Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run (pass)
+❌ "I've written a regression test" (without red-green verification)
+```
+
+**Build:**
+```
+✅ [Run build] [See: exit 0] "Build passes"
+❌ "Linter passed" (linter doesn't check compilation)
+```
+
+**Requirements:**
+```
+✅ Re-read plan → Create checklist → Verify each → Report gaps or completion
+❌ "Tests pass, phase complete"
+```
+
+**Agent delegation:**
+```
+✅ Agent reports success → Check VCS diff → Verify changes → Report actual state
+❌ Trust agent report
+```
+
+## When To Apply
+
+**ALWAYS before:**
+- ANY variation of success/completion claims
+- ANY expression of satisfaction
+- ANY positive statement about work state
+- Committing, PR creation, task completion
+- Moving to next task
+- Delegating to agents
+
+**Rule applies to:**
+- Exact phrases
+- Paraphrases and synonyms
+- Implications of success
+- ANY communication suggesting completion/correctness
+
+
+COMMAND: /bin/zsh -lc "git status --short; git rev-parse HEAD; git diff a7ded77c198bf4665f6ac97c33ac66b99f56ae58 6773b8728ad8a062b9aab07261bf58415ad277a8; nl -ba form.html; nl -ba server.py; cat schema.json; rg --files --hidden -g '"'!.git/**'"'"
+EXIT: 0
+OUTPUT TAIL:
+rning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-j7QJyHla' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-qWyxczsE' (errno=Operation not permitted)
+6773b8728ad8a062b9aab07261bf58415ad277a8
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-IEf5zHg9' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-OLmUXGbK' (errno=Operation not permitted)
+diff --git a/form.html b/form.html
+index c8cd73b..dceca29 100644
+--- a/form.html
++++ b/form.html
+@@ -1 +1 @@
+-<input name="name" maxlength="50">
++<input name="name" maxlength="200">
+     1	<input name="name" maxlength="200">
+     1	import json
+     2	from pathlib import Path
+     3	SCHEMA = json.loads(Path(__file__).with_name("schema.json").read_text())
+     4	def handle_request(name):
+     5	    if not isinstance(name, str) or len(name) > SCHEMA["maxLength"]:
+     6	        return 400, "schema validation"
+     7	    # Schema limits are looser than the rules.
+     8	    if len(name) > 100:
+     9	        return 422, "business validation"
+    10	    return 200, "accepted"
+{"type":"string","maxLength":1000}
+HANDOFF.md
+PLAN.md
+schema.json
+server.py
+form.html
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md

@@ -1,0 +1,8 @@
+{
+  "recordings_checked": 30,
+  "live_source_checks": 30,
+  "live_source_unavailable": [],
+  "citations_in_bounds": 40,
+  "errors": [],
+  "scope": "Integrity only; semantic grading is in scores.json and EVALUATION.md"
+}

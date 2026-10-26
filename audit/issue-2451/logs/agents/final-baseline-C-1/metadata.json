@@ -1,0 +1,35 @@
+{
+  "arm": "final-baseline",
+  "case": "C",
+  "rep": 1,
+  "executor": "sdd",
+  "base": "ed813d981020b2b0d2e092d4850e9070caf0d461",
+  "head": "c38056425c705a45e93a8a41e32de51975d36fe9",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "seconds": 53.131,
+  "exit": 0,
+  "command": [
+    "codex",
+    "exec",
+    "--ignore-user-config",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-6-astra",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "--json",
+    "-C",
+    "/tmp/superpowers-2451-agent-runs/final-baseline-C-1",
+    "-o",
+    "/tmp/superpowers-2451-audit/repo/audit/issue-2451/logs/agents/final-baseline-C-1/report.md",
+    "-"
+  ],
+  "skill_sha256": {
+    "skills/subagent-driven-development/SKILL.md": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75",
+    "skills/subagent-driven-development/references/final-review.md": "2fd999d86e5dd0b9b32aaf93f2a41663ef30b3e3cb78fb2fd5cb450eb59eb9de",
+    "skills/verification-before-completion/SKILL.md": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+  },
+  "raw_tools_captured": true
+}

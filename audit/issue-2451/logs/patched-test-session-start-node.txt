@@ -1,0 +1,22 @@
+SessionStart hook output tests
+  [PASS] hooks.json registers SessionStart with shell:bash dispatch
+  [PASS] Claude Code emits nested SessionStart additionalContext
+  [PASS] run-hook.cmd wrapper dispatches to the named session-start script
+  [PASS] Cursor emits top-level additional_context only
+  [PASS] Copilot CLI emits top-level additionalContext only
+  [PASS] SessionStart omits obsolete legacy custom-skill warning
+  [PASS] session-start with empty PATH still emits nested additionalContext
+  [PASS] run-hook.cmd with empty PATH still dispatches session-start
+  [PASS] run-hook.cmd run by zsh without bash dispatches session-start through zsh
+  [SKIP] run-hook.cmd with neither bash nor zsh: sh is bash here
+  [PASS] session-start run by bare filename from hooks/ still emits nested additionalContext
+  [PASS] run-hook.cmd run by bare filename from hooks/ still dispatches session-start
+  [PASS] session-start reached through a backslash path still reads the skill
+  [PASS] session-start exits 0 silently when stdout is closed early
+  [PASS] run-hook.cmd exits 0 silently when stdout is closed early
+  [PASS] session-start exits 0 silently when stdout is closed early
+  [PASS] run-hook.cmd exits 0 silently when stdout is closed early
+  [PASS] session-start exits 0 silently when stdout is closed early
+  [PASS] run-hook.cmd exits 0 silently when stdout is closed early
+  [SKIP] child-process count: needs Linux strace
+STATUS: PASSED

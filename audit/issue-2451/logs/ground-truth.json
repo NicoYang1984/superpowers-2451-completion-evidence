@@ -1,0 +1,22 @@
+{
+  "A": {
+    "R1": false,
+    "R2": true
+  },
+  "B": {
+    "R1": false,
+    "R2": true
+  },
+  "C": {
+    "R1": false,
+    "R2": true
+  },
+  "D": {
+    "R1": true,
+    "R2": "not_applicable"
+  },
+  "E": {
+    "R1": true,
+    "R2": "unverified"
+  }
+}

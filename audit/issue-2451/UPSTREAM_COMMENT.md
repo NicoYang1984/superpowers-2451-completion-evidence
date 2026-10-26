@@ -1,0 +1,12 @@
+I published an agent-assisted [reproduction and evaluation archive](https://github.com/NicoYang1984/superpowers-2451-completion-evidence) against `dev` at `b58deb3`. This reproduces the **inconsistent project states**, not the original model's false-success behavior: heading-only card changes; frontend/schema/business limits of 200/1000/100; and a held-out stale CSV despite a correct exporter. Controls cover already-correct code with zero diff and unavailable staging verification.
+
+The [candidate patch](https://github.com/NicoYang1984/superpowers-2451-completion-evidence/commit/968c13faadad3de0a492580fe75db3f91620ad25) changes three files (+61 lines), connecting both Finish paths to a shared requirement/status/implementation/verification report contract. No runtime framework or dependency is added; existing correct code may satisfy a requirement without a diff.
+
+Final comparison: **15 baseline + 15 patched sessions**, three per case, same model/harness:
+- False functional completion claims: **0 vs 0**; missing requirements identified: **9/9 in both**.
+- Strict final-report evidence completeness: **6/30 → 30/30** (baseline **9/30** if a unique function name counts as a source locator).
+- Already-correct tasks falsely rejected: **0/3 in both**. Mean runtime increased **7.2%**; report length nearly doubled.
+
+These small, non-blind, final-stage tests support improved report auditability, **not a demonstrated reduction in false completion claims or a verified fix for #2451**. They do not test a full workflow or the original Claude environment. [Protocol, scores, reports and raw tool evidence](https://github.com/NicoYang1984/superpowers-2451-completion-evidence/tree/public/issue-2451/audit/issue-2451) are available; 11 deterministic fixture checks pass. A collector caveat is documented: some nested tool calls were absent from CLI JSONL but present in raw session records; missing JSONL events are not proof of fabricated execution.
+
+Disclosure: Codex CLI `0.155.0-alpha.9`, `gpt-6-astra` alias, medium reasoning, macOS; exact model snapshot unavailable. The human partner requested this research and publication, not a report of their own production incident. [Authoring/tool details and plugin-inventory limits](https://github.com/NicoYang1984/superpowers-2451-completion-evidence/blob/public/issue-2451/audit/issue-2451/PUBLICATION.md). No upstream PR or maintainer invitation is claimed.

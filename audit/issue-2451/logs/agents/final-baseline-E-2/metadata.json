@@ -1,0 +1,34 @@
+{
+  "arm": "final-baseline",
+  "case": "E",
+  "rep": 2,
+  "executor": "executing-plans",
+  "base": "bc39d7e9a75adc6b1b5d3c3921f4eb0dcd778709",
+  "head": "320dc0e1504e0e28a1adb1f6f399147dfc3b7433",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "seconds": 46.093,
+  "exit": 0,
+  "command": [
+    "codex",
+    "exec",
+    "--ignore-user-config",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-6-astra",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "--json",
+    "-C",
+    "/tmp/superpowers-2451-agent-runs/final-baseline-E-2",
+    "-o",
+    "/tmp/superpowers-2451-audit/repo/audit/issue-2451/logs/agents/final-baseline-E-2/report.md",
+    "-"
+  ],
+  "skill_sha256": {
+    "skills/executing-plans/SKILL.md": "e4649e59880ef2643d1da128e3d607e87e3f969410d72095a5bf65811b6036dc",
+    "skills/verification-before-completion/SKILL.md": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+  },
+  "raw_tools_captured": true
+}

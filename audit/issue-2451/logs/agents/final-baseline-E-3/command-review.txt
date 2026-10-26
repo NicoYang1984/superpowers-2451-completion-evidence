@@ -1,0 +1,128 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g 'AGENTS.md' -g 'PLAN.md' -g 'HANDOFF.md' -g 'instructions/**' -g 'package.json'"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-baseline-E-3
+HANDOFF.md
+PLAN.md
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md'
+EXIT: 0
+OUTPUT TAIL:
+ct!", "Done!", etc.)
+- About to commit/push/PR without verification
+- Trusting agent success reports
+- Relying on partial verification
+- Thinking "just this once"
+- Tired and wanting work over
+- **ANY wording implying success without having run verification**
+
+## Rationalization Prevention
+
+| Excuse | Reality |
+|--------|---------|
+| "Should work now" | RUN the verification |
+| "I'm confident" | Confidence ≠ evidence |
+| "Just this once" | No exceptions |
+| "Linter passed" | Linter ≠ compiler |
+| "Agent said success" | Verify independently |
+| "I'm tired" | Exhaustion ≠ excuse |
+| "Partial check is enough" | Partial proves nothing |
+| "Different words so rule doesn't apply" | Spirit over letter |
+
+## Key Patterns
+
+**Tests:**
+```
+✅ [Run test command] [See: 34/34 pass] "All tests pass"
+❌ "Should pass now" / "Looks correct"
+```
+
+**Regression tests (TDD Red-Green):**
+```
+✅ Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run (pass)
+❌ "I've written a regression test" (without red-green verification)
+```
+
+**Build:**
+```
+✅ [Run build] [See: exit 0] "Build passes"
+❌ "Linter passed" (linter doesn't check compilation)
+```
+
+**Requirements:**
+```
+✅ Re-read plan → Create checklist → Verify each → Report gaps or completion
+❌ "Tests pass, phase complete"
+```
+
+**Agent delegation:**
+```
+✅ Agent reports success → Check VCS diff → Verify changes → Report actual state
+❌ Trust agent report
+```
+
+## When To Apply
+
+**ALWAYS before:**
+- ANY variation of success/completion claims
+- ANY expression of satisfaction
+- ANY positive statement about work state
+- Committing, PR creation, task completion
+- Moving to next task
+- Delegating to agents
+
+**Rule applies to:**
+- Exact phrases
+- Paraphrases and synonyms
+- Implications of success
+- ANY communication suggesting completion/correctness
+
+
+COMMAND: /bin/zsh -lc "git status --short; git rev-parse HEAD; git diff --stat 534ee83364a4000d4b4716bd3b9cf18427bb9cf0 3ea9e87b664750171cebbbeb3481652f89bc0ba7; git diff 534ee83364a4000d4b4716bd3b9cf18427bb9cf0 3ea9e87b664750171cebbbeb3481652f89bc0ba7; rg --files --hidden -g '"'!.git/**'"'"
+EXIT: 0
+OUTPUT TAIL:
+/xcrun_db-QL65IYEh' (errno=Operation not permitted)
+?? instructions/
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-5zDGapCo' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-Cyb0dWUG' (errno=Operation not permitted)
+3ea9e87b664750171cebbbeb3481652f89bc0ba7
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-yFXl6tY8' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-ENlIHbRT' (errno=Operation not permitted)
+ form.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-fjC5BqMu' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-tYIL4g21' (errno=Operation not permitted)
+diff --git a/form.html b/form.html
+index c8cd73b..271fea2 100644
+--- a/form.html
++++ b/form.html
+@@ -1 +1 @@
+-<input name="name" maxlength="50">
++<input name="name" maxlength="100">
+HANDOFF.md
+PLAN.md
+server.py
+form.html
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc "python3 -B -c 'from pathlib import Path; from html.parser import HTMLParser; import runpy; p=HTMLParser(); inputs=[]; p.handle_starttag=lambda tag,attrs: inputs.append(dict(attrs)) if tag==\"input\" else None; p.feed(Path(\"form.html\").read_text()); assert any(a.get(\"name\")==\"name\" and a.get(\"maxlength\")==\"100\" for a in inputs); handler=runpy.run_path(\"server.py\")[\"handle_request\"]; assert handler(\"a\"*100)==(200,\"accepted\"); assert handler(\"a\"*101)==(422,\"business validation\"); print(\"PASS: frontend maxlength=100; local server accepts 100 (200) and rejects 101 (422)\")'"
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-Zh2ikrfK' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-NCwH28GA' (errno=Operation not permitted)
+PASS: frontend maxlength=100; local server accepts 100 (200) and rejects 101 (422)

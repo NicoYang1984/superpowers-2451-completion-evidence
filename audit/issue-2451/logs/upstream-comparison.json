@@ -1,0 +1,42 @@
+[
+  {
+    "arm": "baseline",
+    "command": "bash tests/codex/test-package-codex-plugin.sh",
+    "node_available": true,
+    "exit": 1,
+    "log": "baseline-test-package-codex-plugin-node.txt"
+  },
+  {
+    "arm": "baseline",
+    "command": "bash tests/hooks/test-session-start.sh",
+    "node_available": true,
+    "exit": 0,
+    "log": "baseline-test-session-start-node.txt"
+  },
+  {
+    "arm": "baseline",
+    "command": "TZ=UTC bash tests/codex/test-package-codex-plugin.sh",
+    "exit": 0,
+    "log": "baseline-test-package-codex-plugin-utc.txt"
+  },
+  {
+    "arm": "patched",
+    "command": "bash tests/codex/test-package-codex-plugin.sh",
+    "node_available": true,
+    "exit": 1,
+    "log": "patched-test-package-codex-plugin-node.txt"
+  },
+  {
+    "arm": "patched",
+    "command": "bash tests/hooks/test-session-start.sh",
+    "node_available": true,
+    "exit": 0,
+    "log": "patched-test-session-start-node.txt"
+  },
+  {
+    "arm": "patched",
+    "command": "TZ=UTC bash tests/codex/test-package-codex-plugin.sh",
+    "exit": 0,
+    "log": "patched-test-package-codex-plugin-utc.txt"
+  }
+]

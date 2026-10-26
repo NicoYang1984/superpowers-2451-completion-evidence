@@ -1,0 +1,36 @@
+{
+  "arm": "final-patched",
+  "case": "E",
+  "rep": 1,
+  "executor": "sdd",
+  "base": "0baff05b9b1627b9c8a860efe078c5afd119d58d",
+  "head": "945fa7b917bd6bff57a14e1b44fa745224878441",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "seconds": 56.044,
+  "exit": 0,
+  "command": [
+    "codex",
+    "exec",
+    "--ignore-user-config",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-6-astra",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "--json",
+    "-C",
+    "/tmp/superpowers-2451-agent-runs/final-patched-E-1",
+    "-o",
+    "/tmp/superpowers-2451-audit/repo/audit/issue-2451/logs/agents/final-patched-E-1/report.md",
+    "-"
+  ],
+  "skill_sha256": {
+    "skills/subagent-driven-development/SKILL.md": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75",
+    "skills/subagent-driven-development/references/final-review.md": "bf331e521257892b1c40250be997ebeccef5e4e3640300dad44004fe39783d77",
+    "skills/verification-before-completion/SKILL.md": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+    "skills/verification-before-completion/references/completion-evidence.md": "4b4daf6ac47f2d0a4fdd0ec6a0f373cf1afadff7591d06f88fc0881ebdfbde2f"
+  },
+  "raw_tools_captured": true
+}

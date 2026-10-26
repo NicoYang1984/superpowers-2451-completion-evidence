@@ -1,0 +1,28 @@
+=== Test: sdd-workspace ===
+  [PASS] sdd-workspace without a plan errors with exit 2
+  [PASS] sdd-workspace with a missing plan file errors with exit 2
+  [PASS] prints <repo-root>/.superpowers/sdd/<plan-basename>
+  [PASS] two plans resolve to two distinct directories
+  [PASS] self-ignoring .gitignore created at .superpowers/sdd/ with '*'
+  [PASS] workspace invisible to git status
+  [PASS] git add -A does not stage the workspace
+  [PASS] task-brief writes its brief under the plan's workspace
+  [PASS] review-package writes its diff under the plan's workspace
+  [PASS] review-package without a plan errors with exit 2
+  [PASS] review-package honors an explicit OUTFILE
+  [PASS] review-package rejects a BASE that is not an ancestor of HEAD with exit 3
+  [PASS] review-package rejects an empty BASE..HEAD range with exit 3
+  [PASS] linked worktree resolves its own distinct workspace
+  [PASS] worktree workspace invisible to git status
+  [PASS] task-brief works with no exec bit on sdd-workspace
+  [PASS] same-basename plans resolve to distinct workspaces
+  [PASS] same-basename plans keep both task briefs intact
+  [PASS] legacy markerless workspace is adopted in place and marked
+  [PASS] owned workspace disambiguates with parent-dir suffix
+  [PASS] conflicting plan leaves the original workspace untouched
+  [PASS] double conflict falls back to a counter suffix
+  [PASS] relative, absolute, and ../ spellings share one workspace and marker
+  [PASS] out-of-repo plan gets a basename slug and an absolute-path marker
+  [PASS] an existing .superpowers/sdd/.gitignore is not overwritten
+
+PASS

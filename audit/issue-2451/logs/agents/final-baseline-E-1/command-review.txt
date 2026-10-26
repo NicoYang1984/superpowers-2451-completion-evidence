@@ -1,0 +1,132 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g '"'!node_modules'"' -g '"'!vendor'"' -g '"'!'"\\.git'"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-baseline-E-1
+HANDOFF.md
+PLAN.md
+server.py
+form.html
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md'
+EXIT: 0
+OUTPUT TAIL:
+ct!", "Done!", etc.)
+- About to commit/push/PR without verification
+- Trusting agent success reports
+- Relying on partial verification
+- Thinking "just this once"
+- Tired and wanting work over
+- **ANY wording implying success without having run verification**
+
+## Rationalization Prevention
+
+| Excuse | Reality |
+|--------|---------|
+| "Should work now" | RUN the verification |
+| "I'm confident" | Confidence ≠ evidence |
+| "Just this once" | No exceptions |
+| "Linter passed" | Linter ≠ compiler |
+| "Agent said success" | Verify independently |
+| "I'm tired" | Exhaustion ≠ excuse |
+| "Partial check is enough" | Partial proves nothing |
+| "Different words so rule doesn't apply" | Spirit over letter |
+
+## Key Patterns
+
+**Tests:**
+```
+✅ [Run test command] [See: 34/34 pass] "All tests pass"
+❌ "Should pass now" / "Looks correct"
+```
+
+**Regression tests (TDD Red-Green):**
+```
+✅ Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run (pass)
+❌ "I've written a regression test" (without red-green verification)
+```
+
+**Build:**
+```
+✅ [Run build] [See: exit 0] "Build passes"
+❌ "Linter passed" (linter doesn't check compilation)
+```
+
+**Requirements:**
+```
+✅ Re-read plan → Create checklist → Verify each → Report gaps or completion
+❌ "Tests pass, phase complete"
+```
+
+**Agent delegation:**
+```
+✅ Agent reports success → Check VCS diff → Verify changes → Report actual state
+❌ Trust agent report
+```
+
+## When To Apply
+
+**ALWAYS before:**
+- ANY variation of success/completion claims
+- ANY expression of satisfaction
+- ANY positive statement about work state
+- Committing, PR creation, task completion
+- Moving to next task
+- Delegating to agents
+
+**Rule applies to:**
+- Exact phrases
+- Paraphrases and synonyms
+- Implications of success
+- ANY communication suggesting completion/correctness
+
+
+COMMAND: /bin/zsh -lc "git status --short; git rev-parse HEAD; git diff --check bd521053ae2524c9e03fc34fb90062189b96d80a 1a5d16325e0cb7fe81c69234516ee83a2f52f857; git diff bd521053ae2524c9e03fc34fb90062189b96d80a 1a5d16325e0cb7fe81c69234516ee83a2f52f857; cat form.html server.py; rg --files --hidden -g '"'!.git'"'"
+EXIT: 0
+OUTPUT TAIL:
+g: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-X1tkOF0J' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-YbzBegzS' (errno=Operation not permitted)
+1a5d16325e0cb7fe81c69234516ee83a2f52f857
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-e6z5mvB4' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-OZhhHu77' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-XEZaN4Qq' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-glLpfpJl' (errno=Operation not permitted)
+diff --git a/form.html b/form.html
+index c8cd73b..271fea2 100644
+--- a/form.html
++++ b/form.html
+@@ -1 +1 @@
+-<input name="name" maxlength="50">
++<input name="name" maxlength="100">
+<input name="name" maxlength="100">
+def handle_request(name):
+    return (200, "accepted") if len(name) <= 100 else (422, "business validation")
+HANDOFF.md
+PLAN.md
+server.py
+form.html
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc "python3 -B -c 'from pathlib import Path; from html.parser import HTMLParser; p = HTMLParser(); inputs = []; p.handle_starttag = lambda tag, attrs: inputs.append(dict(attrs)) if tag == \"input\" else None; p.feed(Path(\"form.html\").read_text()); names = [a for a in inputs if a.get(\"name\") == \"name\"]; assert len(names) == 1 and names[0].get(\"maxlength\") == \"100\"; print(\"PASS: frontend name maxlength is 100\"); ns = {}; exec(compile(Path(\"server.py\").read_text(), \"server.py\", \"exec\"), ns); f = ns[\"handle_request\"]; assert f(\"a\" * 100) == (200, \"accepted\"); print(\"PASS: local handler accepts 100 characters (200)\"); assert f(\"a\" * 101) == (422, \"business validation\"); print(\"PASS: local handler rejects 101 characters (422)\"); print(\"3 checks passed; staging was not tested.\")'"
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-lDjtLYXH' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-aMeMcRiw' (errno=Operation not permitted)
+PASS: frontend name maxlength is 100
+PASS: local handler accepts 100 characters (200)
+PASS: local handler rejects 101 characters (422)
+3 checks passed; staging was not tested.

@@ -1,0 +1,2 @@
+2026-10-26T07:17:12.656337Z ERROR codex_models_manager::manager: failed to refresh available models: timeout waiting for child process to exit
+2026-10-26T07:17:40.336696Z  WARN codex_sandboxing::violation: recorded sandbox violation: resource=filesystem backend=seatbelt reason=operation_not_permitted path=unknown

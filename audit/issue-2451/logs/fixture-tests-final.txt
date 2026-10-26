@@ -1,0 +1,16 @@
+test_actual_route_rejects_frontend_permitted_input (__main__.FixtureTests) ... ok
+test_card_headings_do_not_reorder_cards (__main__.FixtureTests) ... ok
+test_changed_generator_does_not_update_delivered_artifact (__main__.FixtureTests) ... ok
+test_existing_code_without_diff_and_conditional_na (__main__.FixtureTests) ... ok
+test_fresh_artifact_is_accepted (__main__.FixtureTests) ... ok
+test_header_only_export_is_rejected (__main__.FixtureTests) ... ok
+test_local_success_does_not_establish_staging_state (__main__.FixtureTests) ... ok
+test_repaired_cards_are_accepted (__main__.FixtureTests) ... ok
+test_repaired_frontend_is_accepted (__main__.FixtureTests) ... ok
+test_server_boundaries (__main__.FixtureTests) ... ok
+test_wrong_tax_with_right_header_is_rejected (__main__.FixtureTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.131s
+
+OK

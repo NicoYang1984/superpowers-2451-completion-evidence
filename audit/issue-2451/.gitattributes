@@ -1,0 +1,2 @@
+# format-patch contains intentional whitespace-only context lines.
+fix.patch -whitespace

@@ -1,0 +1,1 @@
+V2 frozen after reading only development A/B results; C/D reports remain unread. V1 A reports assert Python execution without a recorded Python tool call and omit replayable commands. V2 requires an executable check body and a completed tool result, explicitly separates reading from execution. Evaluate A five times before accepting. Do not alter held-out scoring.

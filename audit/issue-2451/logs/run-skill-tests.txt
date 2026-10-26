@@ -1,0 +1,10 @@
+========================================
+ Claude Code Skills Test Suite
+========================================
+
+Repository: /tmp/superpowers-2451-audit/repo
+Test time: Mon Oct 26 14:58:11 CST 2026
+Claude version: not found
+
+ERROR: Claude Code CLI not found
+Install Claude Code first: https://code.claude.com

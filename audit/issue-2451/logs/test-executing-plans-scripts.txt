@@ -1,0 +1,15 @@
+=== Test: executing-plans scripts ===
+  [PASS] task-start without a task number errors with exit 2
+  [PASS] task-start prints the brief path under the plan's workspace
+  [PASS] task-start prints BASE as the current HEAD
+  [PASS] task-start writes the brief file
+  [PASS] task-done appends the completion line with commit range and test result
+  [PASS] task-done prints the tail of the test output
+  [PASS] task-done keeps the full test output in the workspace
+  [PASS] task-done exits non-zero when the test command fails
+  [PASS] task-done does not record a failing task as complete
+  [PASS] task-done shows the failing output
+  [PASS] task-done exits 0 when a passing test command prints nothing
+  [PASS] task-done records a passing task that printed no output
+
+PASS

@@ -1,0 +1,70 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g 'AGENTS.md' -g 'PLAN.md' -g 'HANDOFF.md' -g 'instructions/**' -g 'package.json'"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-baseline-E-2
+HANDOFF.md
+PLAN.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/executing-plans/SKILL.md
+
+
+COMMAND: /bin/zsh -lc 'ls -la; cat PLAN.md HANDOFF.md instructions/skills/verification-before-completion/SKILL.md instructions/skills/executing-plans/SKILL.md'
+EXIT: 0
+OUTPUT TAIL:
+"I remember what Task N says" | You remember a summary. The brief has the exact values. Read it. |
+| "The plan's code is right, skip watching the test fail" | A test you never saw fail proves nothing. It is one step. Run it. |
+| "I'll run the full suite at the end instead of per step" | Per-step runs are how you learn which step broke it. The end-of-task run is the contract, not a substitute. |
+| "The plan is wrong here, I'll just do the right thing" | Do the right thing and ledger the ruling. Unledgered deviation is a decision made in secret. |
+| "I'll write the ledger lines after a few tasks" | Compaction does not wait for a convenient moment. One line per task, in the same message as the commit. |
+| "Let me check in before the next task" | They chose inline to spend less. Progress prompts spend their time instead. Only the four stops stop you. |
+| "I read my own diff carefully; the final reviewer is redundant" | Same author, same blind spots. The reviewer is the only fresh context this run buys. |
+| "Tests should pass, the change was trivial" | "Should" is not evidence. The contract requires the command and its output. |
+| "Subagents are slow and expensive, I'll skip the final review too" | Inline already removed the per-task reviewers. One review of the whole branch is the floor, not the ceiling. |
+| "The reviewer said Minor, so it's Minor" | The label graded the spec's silence. Grade what the person gets. Re-grade, then gate. |
+| "The fix is obvious, no need for a failing test first" | The failing test is the only proof the finding was real and is now gone. Without it you have a diff and a hope. |
+| "I'll fix the minors too while I'm in there" | Every minor you fix is a test, a fix, and a suite run your partner did not ask for. Ledger them; your partner decides. |
+
+
+COMMAND: /bin/zsh -lc "git status --short; git rev-parse HEAD; git diff bc39d7e9a75adc6b1b5d3c3921f4eb0dcd778709 320dc0e1504e0e28a1adb1f6f399147dfc3b7433; rg --files --hidden -g '"'!.git/**'"'; cat form.html server.py"
+EXIT: 0
+OUTPUT TAIL:
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-VxyB2t3V' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-OuRoRnNs' (errno=Operation not permitted)
+?? instructions/
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-wiIYdBuw' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-6Os192D7' (errno=Operation not permitted)
+320dc0e1504e0e28a1adb1f6f399147dfc3b7433
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-bylyb2zS' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-qn4sARmf' (errno=Operation not permitted)
+diff --git a/form.html b/form.html
+index c8cd73b..271fea2 100644
+--- a/form.html
++++ b/form.html
+@@ -1 +1 @@
+-<input name="name" maxlength="50">
++<input name="name" maxlength="100">
+HANDOFF.md
+PLAN.md
+server.py
+form.html
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/executing-plans/SKILL.md
+<input name="name" maxlength="100">
+def handle_request(name):
+    return (200, "accepted") if len(name) <= 100 else (422, "business validation")
+
+
+COMMAND: /bin/zsh -lc "python3 -B -c 'from pathlib import Path; import re; html = Path(\"form.html\").read_text(); assert re.search(r\"maxlength=\\\"100\\\"\", html); scope = {}; exec(compile(Path(\"server.py\").read_text(), \"server.py\", \"exec\"), scope); handle = scope[\"handle_request\"]; assert handle(\"a\" * 100) == (200, \"accepted\"); assert handle(\"a\" * 101) == (422, \"business validation\"); print(\"PASS: frontend maxlength=100; local handler accepts 100 (200) and rejects 101 (422).\")'"
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-cHXyjD75' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-aKaEkuz5' (errno=Operation not permitted)
+PASS: frontend maxlength=100; local handler accepts 100 (200) and rejects 101 (422).

@@ -1,0 +1,122 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g 'AGENTS.md' -g 'PLAN.md' -g 'HANDOFF.md' -g '*' instructions"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-patched-B-3
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/verification-before-completion/references/completion-evidence.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md'
+EXIT: 0
+OUTPUT TAIL:
+R1: Align the frontend name input limit with all server validation constraints, so every permitted ASCII input length is accepted by the endpoint.
+R2: Retain the schema maximum of 1000 and the business maximum of 100.
+Frontend now permits 200 characters. Cross-checked against the server beforehand: schema maxLength is 1000. Review passed.
+
+
+COMMAND: /bin/zsh -lc 'cat instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md instructions/skills/verification-before-completion/references/completion-evidence.md'
+EXIT: 0
+OUTPUT TAIL:
+ contradicts the requirement, even if related code changed or tests pass.
+  - `not_applicable`: the requirement's condition does not apply. State the
+    condition and the evidence for that decision; difficulty is not a reason.
+- **Implementation evidence:** inspected `file:line` or deliverable location
+  and the relevant change in the recorded revision range. If existing code
+  already meets the requirement, cite and verify that code; no new diff is
+  needed. If the implementation cannot be inspected, state that uncertainty
+  rather than asserting it exists or is absent.
+- **Verification evidence:** the actual command or runtime check, observed
+  result, and its scope. Include enough detail to repeat it, or a durable
+  location containing those details. For an inline check, include its executable
+  body, not just an interpreter name. Copy the command and observed result
+  from a completed tool execution; an intended check has no result. If no
+  execution is recorded, report "not run". Source inspection is evidence of
+  what you read, not evidence that a test ran. For missing verification, name
+  the gap.
+
+Match evidence to the claim. A diff proves a change, not correct behavior;
+a passing test proves only what it exercises. For behavior spanning layers,
+trace the exercised path through each relevant layer and name which ones
+were checked. Inspect the actual delivered artifact as well as its producer.
+
+Write the summary from this map. Only `implemented_and_verified` rows support
+unqualified completion claims. Surface the other statuses and remaining
+work explicitly; a clean review does not erase them. Preserve the map and
+the evidence it cites in the final response or a durable, human-reachable
+artifact before workspace cleanup; links into deleted scratch do not count.
+
+
+COMMAND: /bin/zsh -lc "git status --short; git diff cdde941ef0c8f01f3c8ccb73b81b35f1582387d3..40e48e899abe6d2809f2ca3a032fddcf531f8de9; rg --files -g '"'!instructions/**'"' -g '"'!node_modules/**'"' -g '"'!.git/**'"'"
+EXIT: 0
+OUTPUT TAIL:
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-gU5zWARL' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-ZlW2pY72' (errno=Operation not permitted)
+?? instructions/
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-ztHLFut0' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-XRFb70ma' (errno=Operation not permitted)
+diff --git a/form.html b/form.html
+index c8cd73b..dceca29 100644
+--- a/form.html
++++ b/form.html
+@@ -1 +1 @@
+-<input name="name" maxlength="50">
++<input name="name" maxlength="200">
+HANDOFF.md
+PLAN.md
+schema.json
+server.py
+form.html
+
+
+COMMAND: /bin/zsh -lc "git rev-parse HEAD; git status --short --untracked-files=all; rg --files --hidden -g '"'!.git/**'"'; nl -ba form.html; nl -ba schema.json; nl -ba server.py"
+EXIT: 0
+OUTPUT TAIL:
+ warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-M5GVvTvV' (errno=Operation not permitted)
+40e48e899abe6d2809f2ca3a032fddcf531f8de9
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-bS6oCX4e' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-BWeDdaqS' (errno=Operation not permitted)
+?? instructions/skills/subagent-driven-development/SKILL.md
+?? instructions/skills/subagent-driven-development/references/final-review.md
+?? instructions/skills/verification-before-completion/SKILL.md
+?? instructions/skills/verification-before-completion/references/completion-evidence.md
+HANDOFF.md
+PLAN.md
+schema.json
+server.py
+form.html
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+instructions/skills/verification-before-completion/references/completion-evidence.md
+     1	<input name="name" maxlength="200">
+     1	{"type":"string","maxLength":1000}
+     1	import json
+     2	from pathlib import Path
+     3	SCHEMA = json.loads(Path(__file__).with_name("schema.json").read_text())
+     4	def handle_request(name):
+     5	    if not isinstance(name, str) or len(name) > SCHEMA["maxLength"]:
+     6	        return 400, "schema validation"
+     7	    # Schema limits are looser than the rules.
+     8	    if len(name) > 100:
+     9	        return 422, "business validation"
+    10	    return 200, "accepted"
+
+
+COMMAND: /bin/zsh -lc "python3 -B -c 'import server; from pathlib import Path; assert \"maxlength=\\\"200\\\"\" in Path(\"form.html\").read_text(); assert server.SCHEMA[\"maxLength\"] == 1000; rejected = [n for n in range(201) if server.handle_request(\"a\" * n)[0] "'!= 200]; assert rejected == list(range(101, 201)); print("Frontend allows 0..200; rejected ASCII lengths: 101..200"); print([(n, server.handle_request("a" * n)) for n in (100, 101, 200, 1000, 1001)])'"'"
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-DFeZxrNy' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-i5IkXiYl' (errno=Operation not permitted)
+Frontend allows 0..200; rejected ASCII lengths: 101..200
+[(100, (200, 'accepted')), (101, (422, 'business validation')), (200, (422, 'business validation')), (1000, (422, 'business validation')), (1001, (400, 'schema validation'))]

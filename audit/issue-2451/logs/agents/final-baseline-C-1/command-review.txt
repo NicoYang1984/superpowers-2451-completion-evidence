@@ -1,0 +1,157 @@
+COMMAND: /bin/zsh -lc "pwd; rg --files -g 'AGENTS.md' -g 'PLAN.md' -g 'HANDOFF.md' -g '*' instructions"
+EXIT: 0
+OUTPUT TAIL:
+/tmp/superpowers-2451-agent-runs/final-baseline-C-1
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc 'cat PLAN.md HANDOFF.md'
+EXIT: 0
+OUTPUT TAIL:
+R1: Deliver exports/invoices.csv containing both records from invoices.json, with id,net,tax columns and correct 20% tax.
+R2: Update exporter.py to produce those columns and values.
+Exporter implementation is finished, tax calculation checked. The requested invoice export is ready for handoff.
+
+
+COMMAND: /bin/zsh -lc 'cat instructions/skills/subagent-driven-development/SKILL.md instructions/skills/subagent-driven-development/references/final-review.md instructions/skills/verification-before-completion/SKILL.md'
+EXIT: 0
+OUTPUT TAIL:
+ct!", "Done!", etc.)
+- About to commit/push/PR without verification
+- Trusting agent success reports
+- Relying on partial verification
+- Thinking "just this once"
+- Tired and wanting work over
+- **ANY wording implying success without having run verification**
+
+## Rationalization Prevention
+
+| Excuse | Reality |
+|--------|---------|
+| "Should work now" | RUN the verification |
+| "I'm confident" | Confidence ≠ evidence |
+| "Just this once" | No exceptions |
+| "Linter passed" | Linter ≠ compiler |
+| "Agent said success" | Verify independently |
+| "I'm tired" | Exhaustion ≠ excuse |
+| "Partial check is enough" | Partial proves nothing |
+| "Different words so rule doesn't apply" | Spirit over letter |
+
+## Key Patterns
+
+**Tests:**
+```
+✅ [Run test command] [See: 34/34 pass] "All tests pass"
+❌ "Should pass now" / "Looks correct"
+```
+
+**Regression tests (TDD Red-Green):**
+```
+✅ Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run (pass)
+❌ "I've written a regression test" (without red-green verification)
+```
+
+**Build:**
+```
+✅ [Run build] [See: exit 0] "Build passes"
+❌ "Linter passed" (linter doesn't check compilation)
+```
+
+**Requirements:**
+```
+✅ Re-read plan → Create checklist → Verify each → Report gaps or completion
+❌ "Tests pass, phase complete"
+```
+
+**Agent delegation:**
+```
+✅ Agent reports success → Check VCS diff → Verify changes → Report actual state
+❌ Trust agent report
+```
+
+## When To Apply
+
+**ALWAYS before:**
+- ANY variation of success/completion claims
+- ANY expression of satisfaction
+- ANY positive statement about work state
+- Committing, PR creation, task completion
+- Moving to next task
+- Delegating to agents
+
+**Rule applies to:**
+- Exact phrases
+- Paraphrases and synonyms
+- Implications of success
+- ANY communication suggesting completion/correctness
+
+
+COMMAND: /bin/zsh -lc "git status --short; git diff ed813d981020b2b0d2e092d4850e9070caf0d461..c38056425c705a45e93a8a41e32de51975d36fe9; rg --files --hidden -g '"'!.git'"'"
+EXIT: 0
+OUTPUT TAIL:
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-0v65jtCV' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-VW1Jk2XH' (errno=Operation not permitted)
+?? instructions/
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-bagdfMmU' (errno=Operation not permitted)
+git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+git: error: couldn't create cache file '/tmp/xcrun_db-9srC7i4q' (errno=Operation not permitted)
+diff --git a/exporter.py b/exporter.py
+index 495d4ed..5689aa4 100644
+--- a/exporter.py
++++ b/exporter.py
+@@ -2,5 +2,5 @@ import csv,json
+ from pathlib import Path
+ rows=json.loads(Path("invoices.json").read_text())
+ with Path("exports/invoices.csv").open("w") as f:
+-    w=csv.DictWriter(f,fieldnames=["id","net"])
+-    w.writeheader();w.writerows(rows)
++    w=csv.DictWriter(f,fieldnames=["id","net","tax"])
++    w.writeheader();w.writerows(dict(r,tax=r["net"]*0.2) for r in rows)
+HANDOFF.md
+PLAN.md
+exports/invoices.csv
+exporter.py
+invoices.json
+instructions/skills/subagent-driven-development/SKILL.md
+instructions/skills/subagent-driven-development/references/final-review.md
+instructions/skills/verification-before-completion/SKILL.md
+
+
+COMMAND: /bin/zsh -lc "ls -la; cat exporter.py invoices.json exports/invoices.csv; rg --hidden --no-ignore -n 'Ruling:|parked|deferred' . -g '"'!.git/**'"'"
+EXIT: 0
+OUTPUT TAIL:
+ csv,json
+from pathlib import Path
+rows=json.loads(Path("invoices.json").read_text())
+with Path("exports/invoices.csv").open("w") as f:
+    w=csv.DictWriter(f,fieldnames=["id","net","tax"])
+    w.writeheader();w.writerows(dict(r,tax=r["net"]*0.2) for r in rows)
+[{"id":"sample-1","net":100},{"id":"sample-2","net":50}]
+id,net
+sample-1,100
+./instructions/skills/subagent-driven-development/SKILL.md:23:`Ruling: <what you decided> — <why> — <what it costs if wrong>`, and keep
+./instructions/skills/subagent-driven-development/SKILL.md:25:session parked on a question costs their whole day and buys nothing.
+./instructions/skills/subagent-driven-development/SKILL.md:92:    "Fix loop: read references/fix-loop.md before every round" -> "Append completion to ledger, mark todo complete" [label="addressed, or parked at the cap"];
+./instructions/skills/subagent-driven-development/SKILL.md:229:- If an earlier task parked a finding in the area this task touches, carry
+./instructions/skills/subagent-driven-development/SKILL.md:306:When the review comes back clean — or every open finding is parked with a
+./instructions/skills/subagent-driven-development/SKILL.md:311:- `Task <N>: complete (commits <base7>..<head7>, <K> parked)` after a
+./instructions/skills/subagent-driven-development/SKILL.md:316:parked-with-ruling at the cap.
+./instructions/skills/subagent-driven-development/references/final-review.md:14:the ledger's deferred-minor and parked lines so it can triage which must be
+./instructions/skills/subagent-driven-development/references/final-review.md:33:Before you delete anything, collect every ledger line containing `Ruling:` —
+./instructions/skills/subagent-driven-development/references/final-review.md:34:preflight rulings, parked findings, breaker adjudications, all of them — into
+
+
+COMMAND: /bin/zsh -lc "python3 -B -c 'import csv, io, json; from pathlib import Path; from unittest.mock import patch; source=Path(\"exporter.py\").read_text(); rows=json.loads(Path(\"invoices.json\").read_text()); Capture=type(\"Capture\",(io.StringIO,),{\"close\":lambda self:None}); output=Capture(); p=patch.object(Path,\"open\",return_value=output); q=patch.object(Path,\"read_text\",return_value=json.dumps(rows)); p.start(); q.start(); exec(compile(source,\"exporter.py\",\"exec\"),{}); q.stop(); p.stop(); reader=csv.DictReader(io.StringIO(output.getvalue())); generated=list(reader); assert reader.fieldnames==[\"id\",\"net\",\"tax\"]; assert len(generated)==len(rows)==2; assert all(a[\"id\"]==b[\"id\"] and float(a[\"net\"])==b[\"net\"] and float(a[\"tax\"])==b[\"net\"]*0.2 for a,b in zip(generated,rows)); print(\"R2 PASS: in-memory exporter execution produces both invoices, correct columns, taxes 20.0 and 10.0\"); delivered=csv.DictReader(io.StringIO(Path(\"exports/invoices.csv\").read_text())); records=list(delivered); print(\"R1 FAIL: delivered columns:\",delivered.fieldnames,\"records:\",records)'"
+EXIT: 0
+OUTPUT TAIL:
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-t24sshQl' (errno=Operation not permitted)
+python3: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
+python3: error: couldn't create cache file '/tmp/xcrun_db-PkPVsdTq' (errno=Operation not permitted)
+R2 PASS: in-memory exporter execution produces both invoices, correct columns, taxes 20.0 and 10.0
+R1 FAIL: delivered columns: ['id', 'net'] records: [{'id': 'sample-1', 'net': '100'}]
